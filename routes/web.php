@@ -25,6 +25,10 @@ Route::get('/signUp', function () {
     return view('signUp-page');
 });
 
+Route::get('/blank', function () {
+    return view('blank');
+});
+
 Route::get('/', function () {
     return view('default-page');
 });
