@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/landing', function () {
+Route::get('/', function () {
     return view('landing-page');
 });
 
@@ -25,10 +25,14 @@ Route::get('/signUp', function () {
     return view('signUp-page');
 });
 
-Route::get('/blank', function () {
-    return view('blank');
+Route::get('/admin', function () {
+    return view('index');
 });
 
-Route::get('/', function () {
-    return view('default-page');
+Route::get('/profile', function () {
+    return view('profilepage');
 });
+
+// Route::get('/', function () {
+//     return view('default-page');
+// });

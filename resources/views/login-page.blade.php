@@ -6,16 +6,17 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Daftar</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" /> 
+        <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/stylesDaftar.css" rel="stylesheet" />
+        <link href="css/stylesLogin.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Masthead-->
+        <div class="mainCon">
             <div class="masthead">
                 <div class="masthead-content text-white">
                     <div class="container-fluid px-4 pt-4">
-                        <h1 class="fst-italic lh-1 mb-4">Daftar di Apotech</h1>
+                        <h1 class="fst-italic lh-1 mb-4">Masuk ke Apotech</h1>
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
                         <!-- * * * * * * * * * * * * * * *-->
@@ -36,9 +37,9 @@
                                         <input type="password" class="form-control mb-2" id="inputPassword2" placeholder="Password">
                                     </div>
                                     <div class="col-auto d-flex mt-4">
-                                        <a class="btn btn-outline-primary" href="/landing-page">Masuk</a>
+                                        <a class="btn btn-outline-primary" href="/">Masuk</a>
                                     </div>
-                                    <p class="mt-4" style="font-size: 13px; text-align: center;">Belum punya akun? <a href="/login-page" style="font-size: 13px;">Daftar >></a></p>
+                                    <p class="mt-4" style="font-size: 13px; text-align: center;">Belum punya akun? <a href="/signUp" style="font-size: 13px;">Daftar >></a></p>
                                 </form>
                             </div>
                             <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
@@ -65,11 +66,10 @@
                 </div>
             </div>
             <div class="containerImg">
-                <div class="image">
-                            <img src="assets/img/logo.png" alt="logoApotech" style="display: block; width: 150px;">
-                            <a class="navbar-brand" href="#!">Apotech</a>
-                </div>
-            </div>  
+                <img src="assets/img/logo.png" alt="logoApotech" style="display: block; width: 150px;">
+                <a class="navbar-brand" href="#!">Apotech</a>
+            </div>
+        </div>
         <!-- end of maincon -->
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
