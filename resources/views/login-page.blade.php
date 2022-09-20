@@ -6,9 +6,9 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Daftar</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" /> 
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/stylesLogin.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Masthead-->
@@ -16,7 +16,7 @@
             <div class="masthead">
                 <div class="masthead-content text-white">
                     <div class="container-fluid px-4 pt-4">
-                        <h1 class="fst-italic lh-1 mb-4">Masuk ke Apotech</h1>
+                        <h1 class="fst-italic lh-1 mb-4">Masuk di Apotech</h1>
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
                         <!-- * * * * * * * * * * * * * * *-->
@@ -37,7 +37,7 @@
                                         <input type="password" class="form-control mb-2" id="inputPassword2" placeholder="Password">
                                     </div>
                                     <div class="col-auto d-flex mt-4">
-                                        <a class="btn btn-outline-primary" href="/">Masuk</a>
+                                        <a class="btn btn-outline-primary" href="/homeAfter">Masuk</a>
                                     </div>
                                     <p class="mt-4" style="font-size: 13px; text-align: center;">Belum punya akun? <a href="/signUp" style="font-size: 13px;">Daftar >></a></p>
                                 </form>
@@ -66,9 +66,11 @@
                 </div>
             </div>
             <div class="containerImg">
-                <img src="assets/img/logo.png" alt="logoApotech" style="display: block; width: 150px;">
-                <a class="navbar-brand" href="#!">Apotech</a>
-            </div>
+                <div class="image d-flex">
+                            <img src="assets/img/logo.png" alt="logoApotech">
+                            <a class="navbar-brand" href="/home">Apotech</a>
+                </div>
+            </div>  
         </div>
         <!-- end of maincon -->
         <!-- Bootstrap core JS-->

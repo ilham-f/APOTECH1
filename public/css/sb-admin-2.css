@@ -10126,7 +10126,7 @@ a:focus {
   color: #b7b9cc;
 }
 
-.dropdown.no-arrow .dropdown-toggle::after {
+.dropdown .no-arrow .dropdown-toggle::after {
   display: none;
 }
 

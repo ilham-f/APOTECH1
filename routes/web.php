@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing-page');
+Route::get('/home', function () {
+    return view('home-page');
+});
+
+Route::get('/homeAfter', function () {
+    return view('homeAfter');
 });
 
 Route::get('/login', function () {
@@ -26,13 +30,9 @@ Route::get('/signUp', function () {
 });
 
 Route::get('/admin', function () {
-    return view('index');
+    return view('admin');
 });
 
 Route::get('/profile', function () {
-    return view('profilepage');
+    return view('profile-page');
 });
-
-// Route::get('/', function () {
-//     return view('default-page');
-// });

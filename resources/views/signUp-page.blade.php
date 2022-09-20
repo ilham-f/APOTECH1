@@ -6,9 +6,9 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Daftar</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" /> 
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/stylesDaftar.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Masthead-->
@@ -45,7 +45,7 @@
                                         <input type="password" class="form-control mb-2" id="inputPassword2" placeholder="Konfirmasi Password">
                                     </div>
                                     <div class="col-auto d-flex mt-4">
-                                        <a class="btn btn-outline-primary" href="/">Daftar</a>
+                                        <a class="btn btn-outline-primary" href="/homeAfter">Daftar</a>
                                     </div>
                                     <p class="mt-4" style="font-size: 13px; text-align: center;">Sudah mempunyai akun? <a href="/login" style="font-size: 13px;">Masuk >></a></p>
                                 </form>
@@ -75,9 +75,9 @@
             </div>
             <div class="containerImg">
                 <img src="assets/img/logo.png" alt="logoApotech">
-                <a class="navbar-brand" href="#!">Apotech</a>
-            </div>
-        </div>
+                <a class="navbar-brand" href="/home">Apotech</a>
+            </div> 
+        </div> 
         <!-- end of maincon -->
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

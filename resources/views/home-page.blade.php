@@ -22,7 +22,7 @@
                 </div>
                 <a class="navbar-brand" href="#!">Apotech</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">    
                     <form class="d-flex" role="search">
                         <input class="form-control" type="search" placeholder="Cari Obat / Keluhan" aria-label="Search" style="border-radius: 5px 0 0 5px;">
                         <button class="btn btn-success me-2" type="submit" style="border-radius: 0 5px 5px 0;">
@@ -46,9 +46,15 @@
                     </form>
 
                     <form class="d-flex">
-                            <button class="btn btn-outline-dark ms-2" type="submit">
-                                <a href="/login" class="text-decoration-none">Masuk / Daftar</a>
-                            </button>
+                        <div class="text-center ms-2">
+                            <a class="btn btn-outline-dark mt-auto" href="/login">Masuk</a>
+                        </div>
+                    </form>
+    
+                    <form class="d-flex">
+                        <div class="text-center ms-2">
+                            <a class="btn btn-outline-dark mt-auto" href="/signUp">Daftar</a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -79,7 +85,7 @@
                         </ul>
                     </li>
                 </ul>
-
+                
                 <a href="#" class="m-4 d-flex justify-content-center align-items-center" role="button" style="text-decoration: none;">Lihat Semua >></a>
             </div>
             <div class="container px-4 px-lg-5">
