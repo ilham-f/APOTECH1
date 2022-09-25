@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Daftar</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" /> 
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
+@extends('layouts.main')
+
+@section('container')
         <!-- Masthead-->
         <div class="mainCon">
             <div class="masthead">
@@ -37,7 +27,7 @@
                                         <input type="password" class="form-control mb-2" id="inputPassword2" placeholder="Password">
                                     </div>
                                     <div class="col-auto d-flex mt-4">
-                                        <a class="btn btn-outline-primary" href="/homeAfter">Masuk</a>
+                                        <a class="btn btn-outline-primary" href="/">Masuk</a>
                                     </div>
                                     <p class="mt-4" style="font-size: 13px; text-align: center;">Belum punya akun? <a href="/signUp" style="font-size: 13px;">Daftar >></a></p>
                                 </form>
@@ -70,7 +60,7 @@
                             <img src="assets/img/logo.png" alt="logoApotech">
                             <a class="navbar-brand" href="/home">Apotech</a>
                 </div>
-            </div>  
+            </div>
         </div>
         <!-- end of maincon -->
         <!-- Bootstrap core JS-->
@@ -82,5 +72,4 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
-</html>
+@endsection

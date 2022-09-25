@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Obat;
+use App\Models\Category;
+use App\Http\Controllers\ObatController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,26 +17,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('home-page');
+Route::get('/', function () {
+    return view('user.home-page', [
+        'title' => 'Home'
+    ]);
 });
 
 Route::get('/homeAfter', function () {
-    return view('homeAfter');
+    return view('user.homeAfter', [
+        'title' => 'HomeAfter'
+    ]);
 });
 
 Route::get('/login', function () {
-    return view('login-page');
+    return view('user.login-page', [
+        'title' => 'Login'
+    ]);
 });
 
 Route::get('/signUp', function () {
-    return view('signUp-page');
+    return view('user.signUp-page', [
+        'title' => 'signUp'
+    ]);
 });
 
 Route::get('/admin', function () {
-    return view('admin');
+    return view('admin.admin');
 });
 
 Route::get('/profile', function () {
-    return view('profile-page');
+    return view('user.profile-page', [
+        'title' => 'Profile'
+    ]);
 });
+
+Route::get('/produk', [ObatController::class, 'index']);
+
+Route::get('produk/{obat:slug}', [ObatController::class, 'show']);
+
+Route::get('/categories', [CategoryController::class, 'index']);
+
+Route::get('categories/{category:slug}', [CategoryController::class, 'show']);
