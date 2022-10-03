@@ -19,7 +19,8 @@ use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('user.home-page', [
-        'title' => 'Home'
+        'title' => 'Home',
+        'categories' => Category::all()
     ]);
 });
 

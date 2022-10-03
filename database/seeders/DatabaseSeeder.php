@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Category;
+use App\Models\Keluhan;
+use App\Models\Obat;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,25 +16,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(10)->create();
-
-        Category::create([
-            'nama' => 'Obat Bebas',
-            'slug' => 'obat-bebas'
+        $this->call([
+            UserSeeder::class,
+            ObatSeeder::class,
+            CategorySeeder::class,
+            KeluhanSeeder::class
         ]);
 
-        Category::create([
-            'nama' => 'Obat Bebas Terbatas',
-            'slug' => 'obat-bebas-terbatas'
-        ]);
+        $keluhans = Keluhan::all();
 
-        Category::create([
-            'nama' => 'Obat Keras',
-            'slug' => 'obat-keras'
-        ]);
-
-        \App\Models\Obat::factory(8)->create();
-
+        Obat::all()->each(function ($obat) use ($keluhans) {
+            $obat->keluhans()->attach(
+                $keluhans->random(rand(1, 3))->pluck('id')->toArray()
+            );
+        });
 
     }
 }

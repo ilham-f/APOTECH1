@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Obat;
-use App\Http\Requests\StoreObatRequest;
-use App\Http\Requests\UpdateObatRequest;
+use App\Models\Keluhan;
+use App\Http\Requests\StoreKeluhanRequest;
+use App\Http\Requests\UpdateKeluhanRequest;
 
-class ObatController extends Controller
+class KeluhanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,7 @@ class ObatController extends Controller
      */
     public function index()
     {
-        return view('user.produk', [
-            "title" => "Semua Produk",
-            "obats" => Obat::with(['category', 'keluhans'])->latest()->get()
-        ]);
+        //
     }
 
     /**
@@ -34,10 +31,10 @@ class ObatController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreObatRequest  $request
+     * @param  \App\Http\Requests\StoreKeluhanRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreObatRequest $request)
+    public function store(StoreKeluhanRequest $request)
     {
         //
     }
@@ -45,24 +42,21 @@ class ObatController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Obat  $obat
+     * @param  \App\Models\Keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function show(Obat $obat)
+    public function show(Keluhan $keluhan)
     {
-        return view('user.detailproduk', [
-            "title" => "Detail Produk",
-            "obat" => $obat
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Obat  $obat
+     * @param  \App\Models\Keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Obat $obat)
+    public function edit(Keluhan $keluhan)
     {
         //
     }
@@ -70,11 +64,11 @@ class ObatController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateObatRequest  $request
-     * @param  \App\Models\Obat  $obat
+     * @param  \App\Http\Requests\UpdateKeluhanRequest  $request
+     * @param  \App\Models\Keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateObatRequest $request, Obat $obat)
+    public function update(UpdateKeluhanRequest $request, Keluhan $keluhan)
     {
         //
     }
@@ -82,13 +76,11 @@ class ObatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Obat  $obat
+     * @param  \App\Models\Keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Obat $obat)
+    public function destroy(Keluhan $keluhan)
     {
         //
     }
-
-
 }

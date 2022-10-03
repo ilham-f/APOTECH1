@@ -50,10 +50,9 @@ class CategoryController extends Controller
      */
     public function show(category $category)
     {
-        return view('user.category', [
-            'title' => $category->nama,
-            'obats' => $category->obats,
-            'category' => $category->nama
+        return view('user.produk', [
+            'title' => "Obat Kategori : $category->nama",
+            'obats' => $category->obats
         ]);
     }
 

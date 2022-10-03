@@ -7,6 +7,15 @@
     <h2>Jenis Obat : <a href="/categories/{{ $obat->category->slug }}">{{ $obat->category->nama }}</a></h2>
     <p>Harga : Rp. {{ $obat->harga }}</p>
     <p>Stok : {{ $obat->stok }}</p>
+    <p>Keluhan :</p>
+    <ul>
+        @foreach ($obat->keluhans as $keluhan )
+        <li class="d-inline border border-dark">
+            {{ $keluhan->nama }}
+        </li>
+        @endforeach
+    </ul>
     <a href="/produk"><button class="btn btn-success">Kembali</button></a>
+    <a href="#"><button class="btn btn-success">Tambah ke Keranjang</button></a>
 </div>
 @endsection

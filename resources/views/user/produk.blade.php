@@ -1,6 +1,9 @@
 @extends('layouts.main')
 
 @section('container')
+
+<h1 class="text-center mt-5">{{ $title }}</h1>
+
 <div class="container px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach ($obats as $obat)
@@ -15,6 +18,12 @@
                         <h5 class="fw-bolder">{{ $obat->nama }}</h5>
                         <!-- Product price-->
                         <p>Rp. {{ $obat->harga }}</p>
+                        <p>Keluhan :
+                        @foreach ($obat->keluhans as $keluhan )
+                            {{ $keluhan->nama."," }}
+                        @endforeach
+                        </p>
+                        <p>Kategori : {{ $obat->category->nama }}</p>
                     </div>
                 </div>
                 <!-- Product actions-->

@@ -18,9 +18,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Obat</a>
                         <ul class="dropdown-menu" style="padding: 0; border-radius: 5px;">
-                            <li><a class="dropdown-item border-0" href="/categories/obat-keras">Obat Keras</a></li>
-                            <li><a class="dropdown-item border-0" href="/categories/obat-bebas">Obat Bebas</a></li>
-                            <li><a class="dropdown-item border-0" href="/categories/obat-bebas-terbatas">Obat Bebas Terbatas</a></li>
+                            @foreach ($categories as $category)
+                                <li><a class="dropdown-item border-0" href="/categories/{{ $category->slug }}">{{  $category->nama }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                 </ul>

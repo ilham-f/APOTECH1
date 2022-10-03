@@ -15,4 +15,9 @@ class Obat extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function keluhans()
+    {
+        return $this->belongsToMany(Keluhan::class, 'keluhan__obats');
+    }
 }
