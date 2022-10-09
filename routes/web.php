@@ -52,6 +52,18 @@ Route::get('/profile', function () {
     ]);
 });
 
+Route::get('/kirimresep', function () {
+    return view('user.kirimresep', [
+        'title' => 'Kirim Resep'
+    ]);
+});
+
+Route::get('/keranjang', function () {
+    return view('user.keranjang', [
+        'title' => 'Keranjang'
+    ]);
+});
+
 Route::get('/produk', [ObatController::class, 'index']);
 
 Route::get('produk/{obat:slug}', [ObatController::class, 'show']);

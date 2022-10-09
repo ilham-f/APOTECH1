@@ -14,18 +14,22 @@
             </form>
 
             <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-success text-white ms-1 rounded-pill">0</span>
-                </button>
+                <div class="text-center ms-1">
+                    <a class="btn btn-outline-dark mt-auto" href="/keranjang">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-success text-white ms-1 rounded-pill">0</span>
+                    </a>
+                </div>
             </form>
 
             <form class="d-flex">
-                <button class="btn btn-outline-dark ms-2" type="submit">
-                    <i class="bi-card-text me-1"></i>
-                    Kirim Resep
-                </button>
+                <div class="text-center ms-2">
+                    <a class="btn btn-outline-dark mt-auto" href="/kirimresep">
+                        <i class="bi-card-text me-1"></i>
+                        Kirim Resep
+                    </a>
+                </div>
             </form>
 
             <form class="d-flex">

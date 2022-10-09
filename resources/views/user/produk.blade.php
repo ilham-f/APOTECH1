@@ -20,10 +20,9 @@
                         <p>Rp. {{ $obat->harga }}</p>
                         <p>Keluhan :
                         @foreach ($obat->keluhans as $keluhan )
-                            {{ $keluhan->nama."," }}
+                            {{ $keluhan->nama." " }}
                         @endforeach
                         </p>
-                        <p>Kategori : {{ $obat->category->nama }}</p>
                     </div>
                 </div>
                 <!-- Product actions-->
