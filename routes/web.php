@@ -26,7 +26,8 @@ Route::get('/', function () {
 
 Route::get('/homeAfter', function () {
     return view('user.homeAfter', [
-        'title' => 'HomeAfter'
+        'title' => 'HomeAfter',
+        'categories' => Category::all()
     ]);
 });
 
@@ -48,6 +49,18 @@ Route::get('/admin', function () {
 
 Route::get('/profile', function () {
     return view('user.profile-page', [
+        'title' => 'Profile'
+    ]);
+});
+
+Route::get('/ubahpwd', function () {
+    return view('user.ubahpassword', [
+        'title' => 'Profile'
+    ]);
+});
+
+Route::get('/rwytpmblian', function () {
+    return view('user.riwayatpembelian', [
         'title' => 'Profile'
     ]);
 });

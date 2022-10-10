@@ -22661,9 +22661,6 @@ body {
 }
 
 .container-fluid {
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
   box-shadow: 0 0 10px rgb(33, 37, 41, .8);
   background-color: #fff;
 }

@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mt-5 text-center">Keranjang</h1>
+    <h1 class="mt-4 text-center">Keranjang</h1>
 
-    <div class="container border my-5 rounded">
+    <div class="container border my-4 rounded shadow">
         <div class="row p-3">
             <div class="col card m-2">
                 <h4 class="text-success my-3">Obat</h4>

@@ -15,7 +15,7 @@
     </head>
     <body>
         <!-- Navigation-->
-        @include('partials.navbar')
+        @include('partials.navbarafter')
 
         @yield('container')
 

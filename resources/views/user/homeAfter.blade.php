@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.mainafter')
 
 @section('container')
         <!-- Header-->
@@ -10,6 +10,7 @@
                 </div>
             </div>
         </header>
+
         <!-- Section-->
         <section class="py-5">
             <div class="filter d-flex justify-content-between" style="margin-left: 10%; margin-right: 10%;">
@@ -17,19 +18,16 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Obat</a>
                         <ul class="dropdown-menu" style="padding: 0; border-radius: 5px;">
-                            <li><a class="dropdown-item border-0" href="#!">Ibu dan Anak</a></li>
-                            <li><a class="dropdown-item border-0" href="#!">Suplemen</a></li>
-                            <li><a class="dropdown-item border-0" href="#!">Perawatan Tubuh</a></li>
-                            <li><a class="dropdown-item border-0" href="#!">Herbal</a></li>
-                            <li><a class="dropdown-item border-0" href="#!">Alat Kesehatan</a></li>
-                            <li><a class="dropdown-item border-0" href="#!">Obat Generik</a></li>
-                            <li><a class="dropdown-item border-0" href="#!">Obat Langka</a></li>
+                            @foreach ($categories as $category)
+                                <li><a class="dropdown-item border-0" href="/categories/{{ $category->slug }}">{{  $category->nama }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                 </ul>
 
-                <a href="#" class="m-4 d-flex justify-content-center align-items-center" role="button" style="text-decoration: none;">Lihat Semua >></a>
+                <a href="/produk" class="m-4 d-flex justify-content-center align-items-center" role="button" style="text-decoration: none;">Lihat Semua >></a>
             </div>
+
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5">
@@ -54,12 +52,9 @@
                 </div>
             </div>
         </section>
+
         <!-- Footer-->
         <footer class="py-5 bg-success">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Apotech 2022</p></div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
 @endsection
