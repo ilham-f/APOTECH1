@@ -27,7 +27,7 @@
                                         <input type="password" class="form-control mb-2" id="inputPassword2" placeholder="Password">
                                     </div>
                                     <div class="col-auto d-flex mt-4">
-                                        <a class="btn btn-outline-primary" href="/homeAfter">Masuk</a>
+                                        <a class="btn btn-outline-success" style="width: 100%" href="/homeAfter">Masuk</a>
                                     </div>
                                     <p class="mt-4" style="font-size: 13px; text-align: center;">Belum punya akun? <a href="/signUp" style="font-size: 13px;">Daftar >></a></p>
                                 </form>

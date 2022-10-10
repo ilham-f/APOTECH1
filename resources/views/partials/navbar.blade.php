@@ -8,13 +8,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="d-flex" role="search">
                 <input class="form-control" type="search" placeholder="Cari Obat / Keluhan" aria-label="Search" style="border-radius: 5px 0 0 5px;">
-                <button class="btn btn-success me-2" type="submit" style="border-radius: 0 5px 5px 0;">
+                <button class="btn btn-success" type="submit" style="border-radius: 0 5px 5px 0;">
                     <i class="bi bi-search"></i>
                 </button>
             </form>
 
             <form class="d-flex">
-                <div class="text-center ms-1">
+                <div class="text-center ms-2">
                     <a class="btn btn-outline-dark mt-auto" href="/keranjang">
                         <i class="bi-cart-fill me-1"></i>
                         Cart

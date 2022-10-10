@@ -2,14 +2,14 @@
 
 @section('container')
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         @include('partials.sidebaruser')
             <div class="col py-3">
                 <h2 class="text-success">Saudara User - example@email.com</h2>
                 <label for="pilihnegara">Negara</label>
                 <select class="form-select w-50" aria-label="Default select example" id="pilihnegara">
-                    <option selected>Open this select menu</option>
+                    <option selected>Pilih Negara</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -17,15 +17,15 @@
 
                 <label for="pilihprovinsi">Provinsi</label>
                 <select class="form-select w-50" aria-label="Default select example" id="pilihprovinsi">
-                    <option selected>Open this select menu</option>
+                    <option selected>Pilih Provinsi</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
 
-                <label for="pilihkota">Kota</label>
+                <label for="pilihkota">Kota/Kabupaten</label>
                 <select class="form-select w-50" aria-label="Default select example" id="pilihkota">
-                    <option selected>Open this select menu</option>
+                    <option selected>Pilih Kota/Kabupaten</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -33,7 +33,7 @@
 
                 <label for="pilihkec">Kecamatan</label>
                 <select class="form-select w-50" aria-label="Default select example" id="pilihkec">
-                    <option selected>Open this select menu</option>
+                    <option selected>Pilih Kecamatan</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -41,7 +41,7 @@
 
                 <label for="pilihkel">Kelurahan</label>
                 <select class="form-select w-50" aria-label="Default select example" id="pilihkel">
-                    <option selected>Open this select menu</option>
+                    <option selected>Pilih Kelurahan</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -49,7 +49,7 @@
 
                 <label for="pilihkodepos">Kode Pos</label>
                 <select class="form-select w-50" aria-label="Default select example" id="pilihkodepos">
-                    <option selected>Open this select menu</option>
+                    <option selected>Pilih Kode Pos</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
