@@ -236,7 +236,7 @@ sup {
 
 a {
   color: #212529;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: #198754;
@@ -3454,7 +3454,7 @@ textarea.form-control-lg {
 }
 .btn-check:checked + .btn-outline-dark, .btn-check:active + .btn-outline-dark, .btn-outline-dark:active, .btn-outline-dark.active, .btn-outline-dark.dropdown-toggle.show {
   color: #fff;
-  background-color: #212529;
+  background-color: #157347;
   border-color: #212529;
 }
 .btn-check:checked + .btn-outline-dark:focus, .btn-check:active + .btn-outline-dark:focus, .btn-outline-dark:active:focus, .btn-outline-dark.active:focus, .btn-outline-dark.dropdown-toggle.show:focus {
@@ -27143,18 +27143,18 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.filter a {
+/* .filter a {
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
   padding: 7px 7px 7px 7px;
-}
-#navbarDropdown {
+} */
+/* #navbarDropdown {
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
   padding: 7px 7px 7px 7px;
-}
+} */
 
 .card {
   position: relative;

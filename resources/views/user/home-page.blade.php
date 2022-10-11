@@ -16,7 +16,7 @@
             <div class="filter d-flex justify-content-between" style="margin-left: 10%; margin-right: 10%;">
                 <ul class="navbar-nav m-4">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Obat</a>
+                        <a class="nav-link dropdown-toggle border-0" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Obat</a>
                         <ul class="dropdown-menu" style="padding: 0; border-radius: 5px;">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item border-0" href="/categories/{{ $category->slug }}">{{  $category->nama }}</a></li>
@@ -25,7 +25,7 @@
                     </li>
                 </ul>
 
-                <a href="/produk" class="m-4 d-flex justify-content-center align-items-center" role="button" style="text-decoration: none;">Lihat Semua >></a>
+                <a href="/produk" class="m-4 d-flex justify-content-center align-items-center border-0" style="text-decoration: none;">Lihat Semua >></a>
             </div>
 
             <div class="container px-4 px-lg-5">

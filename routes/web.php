@@ -79,6 +79,7 @@ Route::get('/keranjang', function () {
     ]);
 });
 
+
 Route::get('/produk', [ObatController::class, 'index']);
 
 Route::get('produk/{obat:slug}', [ObatController::class, 'show']);
