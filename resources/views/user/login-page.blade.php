@@ -4,8 +4,8 @@
         <!-- Masthead-->
         <div class="mainCon">
             <div class="masthead">
-                <div class="masthead-content text-white">
-                    <div class="container-fluid px-4 pt-4">
+                <div class="masthead-content">
+                    <div class="container-fluid px-4 pt-4 border rounded">
                         <h1 class="fst-italic lh-1 mb-4">Masuk di Apotech</h1>
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
