@@ -14,11 +14,11 @@ class ObatFactory extends Factory
     public function definition()
     {
         return [
-            'nama' => $this->faker->words(mt_rand(1,3), true),
-            'category_id' => mt_rand(1,3),
-            'slug' => $this->faker->slug(),
-            'harga' => ($this->faker->randomNumber(2, false)+1)*1000,
-            'stok' => $this->faker->randomNumber(3, false)
+            // 'nama' => $this->faker->words(mt_rand(1,3), true),
+            // 'category_id' => mt_rand(1,3),
+            // 'slug' => $this->faker->slug(),
+            // 'harga' => ($this->faker->randomNumber(2, false)+1)*1000,
+            // 'stok' => $this->faker->randomNumber(3, false)
         ];
     }
 }
