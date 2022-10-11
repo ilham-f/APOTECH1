@@ -27,7 +27,7 @@
                                                 <div class="btn-group me-2" role="group" aria-label="First group">
                                                     <button type="button" class="btn btn-outline-secondary">-</button>
                                                     <div class="input-group" style="width: 45px">
-                                                        <input type="text" class="form-control text-center" placeholder="1" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        <input type="text" class="form-control rounded-0 text-center" placeholder="1" aria-label="Input group example" aria-describedby="btnGroupAddon">
                                                     </div>
                                                     <button type="button" class="btn btn-outline-secondary">+</button>
                                                 </div>
@@ -57,7 +57,7 @@
                                                 <div class="btn-group me-2" role="group" aria-label="First group">
                                                     <button type="button" class="btn btn-outline-secondary">-</button>
                                                     <div class="input-group" style="width: 45px">
-                                                        <input type="text" class="form-control text-center" placeholder="1" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        <input type="text" class="form-control rounded-0 text-center" placeholder="1" aria-label="Input group example" aria-describedby="btnGroupAddon">
                                                     </div>
                                                     <button type="button" class="btn btn-outline-secondary">+</button>
                                                 </div>
@@ -87,7 +87,7 @@
                                                 <div class="btn-group me-2" role="group" aria-label="First group">
                                                     <button type="button" class="btn btn-outline-secondary">-</button>
                                                     <div class="input-group" style="width: 45px">
-                                                        <input type="text" class="form-control text-center" placeholder="1" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        <input type="text" class="form-control rounded-0 text-center" placeholder="1" aria-label="Input group example" aria-describedby="btnGroupAddon">
                                                     </div>
                                                     <button type="button" class="btn btn-outline-secondary">+</button>
                                                 </div>

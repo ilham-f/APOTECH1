@@ -79,6 +79,20 @@ Route::get('/keranjang', function () {
     ]);
 });
 
+Route::get('/tabelobat', function () {
+    return view('admin.obat', [
+        'title' => 'Tabel Obat',
+        'obats' => Obat::all()
+    ]);
+});
+
+Route::get('/tambahobat', function () {
+    return view('admin.tambahobat', [
+        'title' => 'Tambah Obat',
+        'categories' => Category::all()
+    ]);
+});
+
 
 Route::get('/produk', [ObatController::class, 'index']);
 

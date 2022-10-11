@@ -13,7 +13,7 @@
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
-                  </select>
+                </select>
 
                 <label for="pilihprovinsi">Provinsi</label>
                 <select class="form-select w-50" aria-label="Default select example" id="pilihprovinsi">
