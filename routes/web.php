@@ -20,14 +20,16 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', function () {
     return view('user.home-page', [
         'title' => 'Home',
-        'categories' => Category::all()
+        'categories' => Category::all(),
+        'obats' => Obat::all()
     ]);
 });
 
 Route::get('/homeAfter', function () {
     return view('user.homeAfter', [
         'title' => 'HomeAfter',
-        'categories' => Category::all()
+        'categories' => Category::all(),
+        'obats' => Obat::all()
     ]);
 });
 
