@@ -20,6 +20,7 @@ class CreateObatsTable extends Migration
             $table->string('slug')->unique();
             $table->integer('harga');
             $table->integer('stok');
+            $table->string('image');
             $table->timestamps();
         });
     }
