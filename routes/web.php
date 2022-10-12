@@ -75,7 +75,8 @@ Route::get('/kirimresep', function () {
 
 Route::get('/keranjang', function () {
     return view('user.keranjang', [
-        'title' => 'Keranjang'
+        'title' => 'Keranjang',
+        'obats' => Obat::all()
     ]);
 });
 

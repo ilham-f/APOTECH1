@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="text-center mt-5">Kirim Resep</h1>
 
-    <div class="container px-4 px-lg-5 mt-5">
+<div class="container-fluid d-flex justify-content-center align-items-center py-3 px-5 bg-success" style="height: 91.5vh;">
+    <div class="container p-5">
         <div class="card shadow">
             <div class="card-body d-flex flex-column align-items-center">
                 {{-- <hr class="border border-success border-1 opacity-100 w-100"> --}}
@@ -14,8 +14,10 @@
                     <input class="form-control w-25 mt-2" type="file" id="formFile">
 
                 </div>
-                <button class="btn btn-success mt-3 w-25">Kirim</button>
+                <button class="btn btn-success shadow mt-3 w-25">Kirim</button>
             </div>
         </div>
     </div>
+</div>
+
 @endsection

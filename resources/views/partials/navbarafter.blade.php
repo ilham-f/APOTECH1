@@ -3,7 +3,7 @@
         <div class="image">
             <img src="{{ asset('assets/img/logo.png') }}" alt="logoApotech" style="display: block; height: 50px;">
         </div>
-        <a class="navbar-brand" href="/">Apotech</a>
+        <a class="fst-italic" style="color: #235323; font-weight: 500" href="/homeAfter">Apotech</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="d-flex" role="search">
@@ -15,7 +15,7 @@
 
             <form class="d-flex">
                 <div class="text-center ms-1">
-                    <a class="btn btn-outline-dark mt-auto" href="/keranjang">
+                    <a class="btn btn-outline-success mt-auto" href="/keranjang">
                         <i class="bi-cart-fill me-1"></i>
                         Cart
                         <span class="badge bg-success text-white ms-1 rounded-pill">0</span>
@@ -25,7 +25,7 @@
 
             <form class="d-flex">
                 <div class="text-center ms-2">
-                    <a class="btn btn-outline-dark mt-auto" href="/kirimresep">
+                    <a class="btn btn-outline-success mt-auto" href="/kirimresep">
                         <i class="bi-card-text me-1"></i>
                         Kirim Resep
                     </a>

@@ -2,11 +2,11 @@
 
 @section('container')
         <!-- Masthead-->
-        <div class="mainCon">
+        <div class="mainCon" style="height: 91.5vh;">
             <div class="masthead">
                 <div class="masthead-content text-white">
                     <div class="container-fluid px-4 pt-4 border rounded">
-                        <h1 class="fst-italic lh-1 mb-4">Daftar di Apotech</h1>
+                        <h1 class="fst-italic text-success lh-1 mb-4">Daftar di Apotech</h1>
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
                         <!-- * * * * * * * * * * * * * * *-->
@@ -35,9 +35,9 @@
                                         <input type="password" class="form-control mb-2" id="inputPassword2" placeholder="Konfirmasi Password">
                                     </div>
                                     <div class="mt-4">
-                                        <a class="btn btn-outline-success" style="width: 100%;" href="/homeAfter">Daftar</a>
+                                        <a class="btn btn-success" style="width: 100%;" href="/homeAfter">Daftar</a>
                                     </div>
-                                    <p class="mt-4" style="font-size: 13px; text-align: center;">Sudah mempunyai akun? <a href="/login" style="font-size: 13px;">Masuk >></a></p>
+                                    <p class="mt-4 text-dark" style="font-size: 13px; text-align: center;">Sudah mempunyai akun? <a href="/login" class="text-success" style="font-size: 13px; font-weight: 600;">Masuk >></a></p>
                                 </form>
                             </div>
                             <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
@@ -65,7 +65,7 @@
             </div>
             <div class="containerImg">
                 <img src="assets/img/logo.png" alt="logoApotech">
-                <a class="navbar-brand" href="/home">Apotech</a>
+                <a class="fst-italic" style="color: #235323;" href="/">Apotech</a>
             </div>
         </div>
         <!-- end of maincon -->
