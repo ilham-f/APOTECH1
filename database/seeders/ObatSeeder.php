@@ -82,20 +82,20 @@ class ObatSeeder extends Seeder
             'image' => 'astifen.jpg'
         ]);
         Obat::create([
-            'nama' => 'Guamin',
-            'category_id' => 2,
-            'slug' => 'guamin',
+            'nama' => 'Komix Jahe',
+            'category_id' => 1,
+            'slug' => 'komix-jahe',
             'harga' => 5200,
             'stok' => 43,
-            'image' => 'guamin.jpg'
+            'image' => 'komix-jahe.jpg'
         ]);
         Obat::create([
-            'nama' => 'Imboost',
+            'nama' => 'Imboost Kids Sirup',
             'category_id' => 1,
-            'slug' => 'imboost',
+            'slug' => 'imboost-kids-sirup',
             'harga' => 20000,
             'stok' => 150,
-            'image' => 'imboost.jpg'
+            'image' => 'imboost-kids-sirup.jpg'
         ]);
         Obat::create([
             'nama' => 'Stimuno Forte',
@@ -114,12 +114,12 @@ class ObatSeeder extends Seeder
             'image' => 'bestalin.jpg'
         ]);
         Obat::create([
-            'nama' => 'Oradex',
+            'nama' => 'Oradex Dual Action',
             'category_id' => 2,
-            'slug' => 'oradex',
+            'slug' => 'oradex-dual-action',
             'harga' => 57000,
             'stok' => 157,
-            'image' => 'oradex.jpg'
+            'image' => 'oradex-dual-action.jpg'
         ]);
         Obat::create([
             'nama' => 'Siladex Cough',
@@ -130,28 +130,28 @@ class ObatSeeder extends Seeder
             'image' => 'siladex-cough.jpg'
         ]);
         Obat::create([
-            'nama' => 'Inalergi',
-            'category_id' => 2,
-            'slug' => 'inalergi',
+            'nama' => 'Komix Jeruk Nipis',
+            'category_id' => 1,
+            'slug' => 'komix-jeruk-nipis',
             'harga' => 6500,
             'stok' => 270,
-            'image' => 'inalergi.jpg'
+            'image' => 'komix-jeruk-nipis.jpg'
         ]);
         Obat::create([
-            'nama' => 'Inclarin',
-            'category_id' => 2,
-            'slug' => 'inclarin',
+            'nama' => 'Imboost',
+            'category_id' => 1,
+            'slug' => 'imboost',
             'harga' => 7500,
             'stok' => 180,
-            'image' => 'inclarin.jpg'
+            'image' => 'imboost.jpg'
         ]);
         Obat::create([
-            'nama' => 'Avocel',
-            'category_id' => 2,
-            'slug' => 'avocel',
+            'nama' => 'Promag',
+            'category_id' => 1,
+            'slug' => 'promag',
             'harga' => 5000,
             'stok' => 170,
-            'image' => 'avocel.jpg'
+            'image' => 'promag.jpg'
         ]);
     }
 }
