@@ -16,7 +16,7 @@
         <tbody>
             @foreach ($obats as $obat)
                 <tr>
-                    <th scope="row">{{ $obat->id }}</th>
+                    <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{  $obat->nama }}</td>
                     <td>{{ $obat->stok }}</td>
                     <td class="d-flex justify-content-around">

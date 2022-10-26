@@ -6,8 +6,8 @@
         <a class="fst-italic" style="color: #235323; font-weight: 500" href="/">Apotech</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex" role="search">
-                <input class="form-control " type="search" name="search" placeholder="Cari Obat / Keluhan" aria-label="Search" style="border-radius: 5px 0 0 5px;">
+            <form class="d-flex" role="search" action='/produk'>
+                <input class="form-control " type="search" name="search" placeholder="Cari Obat" aria-label="Search" value="{{ request('search') }}" style="border-radius: 5px 0 0 5px;">
                 <button class="btn btn-success" type="submit" style="border-radius: 0 5px 5px 0;">
                     <i class="bi bi-search"></i>
                 </button>

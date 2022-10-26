@@ -7,7 +7,7 @@
         <img src="{{ asset("assets/img/obats/$obat->image") }}" alt="{{ $obat->slug }}" />
     </div>
 
-    <div class="border-2">
+    <form action="#" class="border-2" method="POST">
         <h1>Nama Obat : {{ $obat->nama }}</h1>
         <h2>Jenis Obat : <a href="/categories/{{ $obat->category->slug }}">{{ $obat->category->nama }}</a></h2>
         <p>Harga : Rp{{ $obat->harga }},00</p>
@@ -20,8 +20,7 @@
             @endforeach
         </p>
         <a href="/produk"><button class="btn btn-success">Kembali</button></a>
-        <a href="#"><button class="btn btn-success">Tambah ke Keranjang</button></a>
-    </div>
-
+        <button type="submit" class="btn btn-success" value="{{ $obat->category->slug }}">Tambah ke Keranjang</button>
+    </form>
 </div>
 @endsection

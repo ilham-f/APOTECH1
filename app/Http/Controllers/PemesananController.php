@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
-use App\Http\Requests\StorecategoryRequest;
-use App\Http\Requests\UpdatecategoryRequest;
+use App\Models\Pemesanan;
+use App\Http\Requests\StorePemesananRequest;
+use App\Http\Requests\UpdatePemesananRequest;
 
-class CategoryController extends Controller
+class PemesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('user.categories', [
-            'categories' => Category::all()
-        ]);
+        //
     }
 
     /**
@@ -33,10 +31,10 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorecategoryRequest  $request
+     * @param  \App\Http\Requests\StorePemesananRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorecategoryRequest $request)
+    public function store(StorePemesananRequest $request)
     {
         //
     }
@@ -44,24 +42,21 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\Pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function show(category $category)
+    public function show(Pemesanan $pemesanan)
     {
-        return view('user.produk', [
-            'title' => "Obat Kategori : $category->nama",
-            'obats' => $category->obats
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\Pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit(Pemesanan $pemesanan)
     {
         //
     }
@@ -69,11 +64,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatecategoryRequest  $request
-     * @param  \App\Models\category  $category
+     * @param  \App\Http\Requests\UpdatePemesananRequest  $request
+     * @param  \App\Models\Pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatecategoryRequest $request, category $category)
+    public function update(UpdatePemesananRequest $request, Pemesanan $pemesanan)
     {
         //
     }
@@ -81,10 +76,10 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\category  $category
+     * @param  \App\Models\Pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(Pemesanan $pemesanan)
     {
         //
     }

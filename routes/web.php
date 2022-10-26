@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Obat;
 use App\Models\Category;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -17,31 +18,17 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('user.home-page', [
-        'title' => 'Home',
-        'categories' => Category::all(),
-        'obats' => Obat::all()
-    ]);
-});
+Route::get('/', [ObatController::class, 'home']);
 
-Route::get('/homeAfter', function () {
-    return view('user.homeAfter', [
-        'title' => 'HomeAfter',
-        'categories' => Category::all(),
-        'obats' => Obat::all()
-    ]);
-});
+Route::get('/homeAfter', [ObatController::class, 'home']);
 
 Route::get('/login', function () {
     return view('user.login-page', [
-        'title' => 'Login'
     ]);
 });
 
 Route::get('/signUp', function () {
     return view('user.signUp-page', [
-        'title' => 'signUp'
     ]);
 });
 
@@ -51,49 +38,38 @@ Route::get('/admin', function () {
 
 Route::get('/profile', function () {
     return view('user.profile-page', [
-        'title' => 'Profile'
     ]);
 });
 
 Route::get('/ubahpwd', function () {
     return view('user.ubahpassword', [
-        'title' => 'Profile'
     ]);
 });
 
 Route::get('/rwytpmblian', function () {
     return view('user.riwayatpembelian', [
-        'title' => 'Profile'
     ]);
 });
 
 Route::get('/kirimresep', function () {
     return view('user.kirimresep', [
-        'title' => 'Kirim Resep'
     ]);
 });
 
-Route::get('/keranjang', function () {
-    return view('user.keranjang', [
-        'title' => 'Keranjang',
-        'obats' => Obat::all()
-    ]);
-});
 
 Route::get('/tabelobat', function () {
     return view('admin.obat', [
-        'title' => 'Tabel Obat',
         'obats' => Obat::all()
     ]);
 });
 
 Route::get('/tambahobat', function () {
     return view('admin.tambahobat', [
-        'title' => 'Tambah Obat',
         'categories' => Category::all()
     ]);
 });
 
+Route::get('/keranjang', [CartController::class, 'index']);
 
 Route::get('/produk', [ObatController::class, 'index']);
 
