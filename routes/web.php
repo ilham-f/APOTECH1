@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Obat;
 use App\Models\Category;
+use App\Models\Keluhan;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
@@ -67,6 +68,33 @@ Route::get('/tambahobat', function () {
     return view('admin.tambahobat', [
         'categories' => Category::all()
     ]);
+});
+Route::get('/tabelkategori', function () {
+    return view('admin.kategori',[
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('/tambahkategori', function () {
+    return view('admin.tambahkategori');
+});
+Route::get('/tabelkategori', function () {
+    return view('admin.kategori',[
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('/tambahkategori', function () {
+    return view('admin.tambahkategori');
+});
+Route::get('/tabelkeluhan', function () {
+    return view('admin.keluhan',[
+        'keluhans' => Keluhan::all()
+    ]);
+});
+
+Route::get('/tambahkeluhan', function () {
+    return view('admin.tambahkeluhan');
 });
 
 Route::get('/keranjang', [CartController::class, 'index']);
