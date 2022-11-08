@@ -19,15 +19,21 @@
 
         @yield('container')
 
-        <!-- Footer-->
-        <footer class="py-5 bg-success">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Apotech 2022</p></div>
-        </footer>
-
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script>
+            let exist = '{{Session::has('errors')}}';
+            let msg = '{{Session::get('errors')}}';
+            msg = msg.replace(/&quot;/g, '\"');
+
+            if(exist){
+                let json = JSON.parse(msg);
+                let emailErr = ((typeof (json["email"]) !== 'undefined') ? json["email"] : '');
+                let passErr = ((typeof (json["password_confirmation"]) !== 'undefined') ? json["password_confirmation"] : '');
+                let alertText = emailErr + "\n" + passErr;
+                alert(alertText);
+            }
+        </script>
     </body>
 </html>

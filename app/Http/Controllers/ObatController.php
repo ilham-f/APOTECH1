@@ -15,15 +15,9 @@ class ObatController extends Controller
      */
     public function index()
     {
-<<<<<<< Updated upstream
-        return view('user.produk', [
-            "title" => "Semua Produk",
-            "obats" => Obat::with(['category', 'keluhans'])->latest()->get()
-=======
 
         return view('user.produk', [
             "obats" => Obat::latest()->filter(request(['search']))->paginate(8)->withQueryString()
->>>>>>> Stashed changes
         ]);
     }
 

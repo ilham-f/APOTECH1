@@ -25,11 +25,11 @@
                                             <p class="card-text">Rp{{ $obat->harga }},00</p>
                                             <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
                                                 <div class="btn-group me-2" role="group" aria-label="First group">
-                                                    <button type="button" class="btn btn-outline-secondary">-</button>
+                                                    <button type="button" class="btn btn-success">-</button>
                                                     <div class="input-group" style="width: 45px">
                                                         <input type="text" class="form-control rounded-0 text-center" placeholder="1" aria-label="Input group example" aria-describedby="btnGroupAddon">
                                                     </div>
-                                                    <button type="button" class="btn btn-outline-secondary">+</button>
+                                                    <button type="button" class="btn btn-success">+</button>
                                                 </div>
                                                 <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
                                             </div>
