@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pemesanans', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('metode_bayar')->nullable();
-            $table->integer('status');
+            $table->string('nama')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('notelp')->nullable();
+            $table->foreignId('user_id');
             $table->timestamps();
-            $table->foreignId('customer_id');
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemesanans');
+        Schema::dropIfExists('customers');
     }
 };

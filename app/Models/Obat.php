@@ -10,6 +10,7 @@ class Obat extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    
     protected $with = ['category', 'keluhans'];
 
     public function scopeFilter($query, array $filters)
