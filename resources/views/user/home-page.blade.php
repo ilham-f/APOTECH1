@@ -60,8 +60,4 @@
             </div>
         </section>
 
-        <!-- Footer-->
-        <footer class="py-5 bg-success">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Apotech 2022</p></div>
-        </footer>
 @endsection

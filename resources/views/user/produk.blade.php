@@ -35,5 +35,10 @@
             <p class="text-center">Tidak Ada</p>
             @endif
     </div>
+
+    <div class="d-flex justify-content-center">
+        {{ $obats->links() }}
+    </div>
+
 </div>
 @endsection

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Obat;
-use App\Models\Category;
 use App\Http\Requests\StoreObatRequest;
 use App\Http\Requests\UpdateObatRequest;
 
@@ -16,26 +15,15 @@ class ObatController extends Controller
      */
     public function index()
     {
-
-        // $obats = Obat::all();
-
-        if(request('search')) {
-            return view('user.produk', [
-                "obats" => Obat::with(['category', 'keluhans'])->where('nama', 'like', '%'.request('search').'%')->get()
-            ]);
-        }
+<<<<<<< Updated upstream
+        return view('user.produk', [
+            "title" => "Semua Produk",
+            "obats" => Obat::with(['category', 'keluhans'])->latest()->get()
+=======
 
         return view('user.produk', [
-            "obats" => Obat::with(['category', 'keluhans'])->latest()->get()
-        ]);
-    }
-
-    public function home()
-    {
-
-        return view('user.home-page', [
-            'categories' => Category::all(),
-            'obats' => Obat::all()
+            "obats" => Obat::latest()->filter(request(['search']))->paginate(8)->withQueryString()
+>>>>>>> Stashed changes
         ]);
     }
 
@@ -69,6 +57,7 @@ class ObatController extends Controller
     public function show(Obat $obat)
     {
         return view('user.detailproduk', [
+            "title" => "Detail Produk",
             "obat" => $obat
         ]);
     }
@@ -106,4 +95,6 @@ class ObatController extends Controller
     {
         //
     }
+
+
 }
