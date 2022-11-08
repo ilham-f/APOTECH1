@@ -33,5 +33,10 @@
             </div>
             @endforeach
     </div>
+
+    <div class="d-flex justify-content-center">
+        {{ $obats->links() }}
+    </div>
+
 </div>
 @endsection

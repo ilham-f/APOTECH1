@@ -52,7 +52,7 @@ class CategoryController extends Controller
     {
         return view('user.produk', [
             'title' => "Obat Kategori : $category->nama",
-            'obats' => $category->obats
+            'obats' => $category->obats()->paginate(8)
         ]);
     }
 
