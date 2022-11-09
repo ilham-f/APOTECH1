@@ -25,7 +25,7 @@ use App\Http\Controllers\AdminController;
 // Route::get('/homeAfter', [ObatController::class, 'index']);
 
 // Pengguna
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('/');
 Route::get('/kirimresep', [HomeController::class, 'resep']);
 Route::get('/profile', [HomeController::class, 'profile']);
 Route::get('/ubahpwd', [HomeController::class, 'ubahpw']);
@@ -37,7 +37,6 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('categories/{category:slug}', [CategoryController::class, 'show']);
 
 // Admin
-Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/tabelobat', [AdminController::class, 'tabelobat']);
 Route::get('/tambahobat', [AdminController::class, 'tambahobat']);
 Route::get('/tabelkategori', [AdminController::class, 'tabelkategori']);
@@ -54,3 +53,18 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+// Middleware cek role
+Route::group(['middleware' => 'auth'], function() {
+
+    //User with admin type
+    Route::group(['middleware' => 'cekrole:admin'], function() {
+        Route::get('/admin', [AdminController::class, 'index']);
+        // Route::get('image/{pembayaran:bukti_bayar}', [ImageController::class, 'index']);
+        // Route::get('/exportspembayaran', [PembayaranExportController::class, 'pembayaranExport']);
+    });
+
+    Route::group(['middleware' => 'cekrole:customer'], function() {
+        Route::get('/', [HomeController::class, 'index'])->name('/');
+    });
+
+});
