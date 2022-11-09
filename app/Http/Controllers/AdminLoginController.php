@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class AdminLoginController extends Controller
 {
     public function index(){
-        return view('user.login-page');
+        return view('admin.login-page');
     }
 
     public function authenticate(Request $request)
@@ -22,16 +21,10 @@ class LoginController extends Controller
         // dd($credentials);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            // return redirect()->intended('/');
-            if(Auth::user()->role == 'admin'){
-                return redirect()->intended('/admin');
-            }
-            else{
-                return redirect()->intended('/');
-            }
+            return redirect()->intended('/admin');
         }
 
-        return back()->with('alert', 'Login gagal!');
+        return back()->with('errors', 'Login gagal!');
     }
 
     public function logout(Request $request)
@@ -42,6 +35,6 @@ class LoginController extends Controller
 
         request()->session()->regenerateToken();
 
-        return redirect()->intended('/login');
+        return redirect()->intended('/');
     }
 }

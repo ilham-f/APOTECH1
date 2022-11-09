@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Obat;
+use App\Models\Category;
+use App\Models\Keluhan;
 
 class AdminController extends Controller
 {
