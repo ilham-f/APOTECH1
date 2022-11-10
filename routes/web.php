@@ -36,8 +36,6 @@ Route::get('/regis', [RegisterController::class, 'index']);
 Route::post('/regis', [RegisterController::class, 'store']);
 
 // Admin Login-Logout
-// Route::get('/login', [AdminLoginController::class, 'index']);
-// Route::post('/login', [AdminLoginController::class, 'authenticate']);
 Route::post('/admin-logout', [AdminLoginController::class, 'logout']);
 
 // Customer Login-Logout

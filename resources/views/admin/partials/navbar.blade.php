@@ -102,7 +102,7 @@
                     Profile
                 </a>
                 <div class="dropdown-divider"></div>
-                    <form action="/admin-logout" method="post">
+                    <form action="/logout" method="post">
                         @csrf
                         <button class="dropdown-item text-danger">Logout</button>
                     </form>

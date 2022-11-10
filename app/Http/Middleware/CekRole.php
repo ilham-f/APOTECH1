@@ -26,6 +26,6 @@ class CekRole
                 return $next($request);
         }
 
-        return redirect('/login');
+        return redirect('/');
     }
 }

@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index(){
+        if(Auth::user()){
+            if(Auth::user()->role == 'admin'){
+                return redirect()->intended('/admin');
+            }
+            else if(Auth::user()->role == 'customer'){
+                return redirect()->intended('/');
+            }
+        }
         return view('user.login-page');
     }
 

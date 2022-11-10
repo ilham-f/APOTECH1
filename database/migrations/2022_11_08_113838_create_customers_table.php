@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('alamat')->nullable();
             $table->string('notelp')->nullable();
+            $table->integer('isicart')->nullable();
             $table->foreignId('user_id');
             $table->timestamps();
         });

@@ -42,7 +42,7 @@
                       <li>
                         <form action="/logout" method="post">
                             @csrf
-                            <button class="dropdown-item text-danger">Logout</button>
+                            <button class="dropdown-item text-danger border-0">Logout</button>
                         </form>
                       </li>
                     </ul>
