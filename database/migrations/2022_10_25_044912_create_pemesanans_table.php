@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('metode_bayar')->nullable();
             $table->integer('status');
             $table->timestamps();
-            $table->foreignId('customer_id');
+            $table->foreignId('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 

@@ -23,15 +23,17 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $obat->nama }}</h5>
                                             <p class="card-text">Rp{{ $obat->harga }},00</p>
-                                            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                                            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups" id="tambahstok">
                                                 <div class="btn-group me-2" role="group" aria-label="First group">
-                                                    <button type="button" class="btn btn-success">-</button>
+                                                    <button disabled id="kurang" type="button" min="0" class="btn btn-outline-secondary"
+                                                        onclick="counter(this.id)">-</button>
                                                     <div class="input-group" style="width: 45px">
-                                                        <input type="text" class="form-control rounded-0 text-center" placeholder="1" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        <input id="value" type="text" class="form-control rounded-0 text-center" value="1">
+                                                        {{-- <div id="value">1</div> --}}
                                                     </div>
-                                                    <button type="button" class="btn btn-success">+</button>
+                                                    <button id="tambah" type="button" min="0" class="btn btn-outline-secondary"
+                                                        onclick="counter(this.id)">+</button>
                                                 </div>
-                                                <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -59,3 +61,25 @@
 </div>
 
 @endsection
+
+<script>
+    function counter(clicked_id) {
+        var counter = document.getElementById('value').value;
+
+        if (counter < 1) {
+            document.getElementById("kurang").disabled = true;
+        }
+        else {
+            document.getElementById("kurang").disabled = false;
+        }
+        var parsed = parseInt(counter);
+
+        let result = clicked_id == "kurang" ? parsed - 1 : parsed + 1;
+
+        console.log(counter);
+        if(result < 0 || result == 0){
+            result = 1;
+        }
+        document.getElementById('value').value = result;
+    }
+</script>

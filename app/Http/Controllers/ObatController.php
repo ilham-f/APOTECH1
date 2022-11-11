@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Obat;
-use App\Http\Requests\StoreObatRequest;
-use App\Http\Requests\UpdateObatRequest;
+use Illuminate\Http\Request;
 
 class ObatController extends Controller
 {
@@ -70,13 +69,17 @@ class ObatController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateObatRequest  $request
      * @param  \App\Models\Obat  $obat
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateObatRequest $request, Obat $obat)
+    public function update(Request $request, $id)
     {
-        //
+        $obat = Obat::find($id);
+        $obat->nama = $request->input('nama');
+        $obat->stok = $request->input('stok');
+        $obat->update();
+
+        return redirect('/tabelobat')->with('status', 'Data obat berhasil diubah');
     }
 
     /**
@@ -85,9 +88,12 @@ class ObatController extends Controller
      * @param  \App\Models\Obat  $obat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Obat $obat)
+    public function destroy(Request $request, $id)
     {
-        //
+        // $obat = Obat::find($id);
+        // $obat->delete();
+
+        // return redirect('/tabelobat')->with('isDelete', 'Obat berhasil dihapus');
     }
 
 

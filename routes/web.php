@@ -35,7 +35,7 @@ Route::get('categories/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/regis', [RegisterController::class, 'index']);
 Route::post('/regis', [RegisterController::class, 'store']);
 
-// Admin Login-Logout
+// Admin Logout
 Route::post('/admin-logout', [AdminLoginController::class, 'logout']);
 
 // Customer Login-Logout
@@ -69,5 +69,9 @@ Route::group(['middleware' => 'auth'], function() {
         // Route::get('image/{pembayaran:bukti_bayar}', [ImageController::class, 'index']);
         // Route::get('/exportspembayaran', [PembayaranExportController::class, 'pembayaranExport']);
     });
-
 });
+
+// Update & Delete tabel obat
+Route::post('/tabelobat/{id}', [ObatController::class, 'update']);
+// Route::post('/tabelobat/{id}', [ObatController::class, 'destroy']);
+
