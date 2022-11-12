@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('bukti_bayar')->nullable();
             $table->integer('status');
             $table->timestamps();
-            $table->foreignId('pemesanan_id');
-            $table->foreignId('pemesanan_customer_id');
+            $table->foreignId('pemesanan_id')->constrained('pemesanans')->onDelete('cascade');
+            $table->foreignId('pemesanan_customer_id')->constrained('customers')->onDelete('cascade');
         });
     }
 

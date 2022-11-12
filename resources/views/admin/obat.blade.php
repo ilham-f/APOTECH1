@@ -29,9 +29,11 @@
 
                         <button class="btn btn-info text-light" data-toggle="modal" data-target="#modalCenter-{{ $obat->id }}">Ubah</button>
                         <form action="/tabelobat/{{ $obat->id }}" method="post">
+                            @method('delete')
                             @csrf
-                            <button class="btn btn-danger">Hapus</button>
+                            <button class="btn btn-danger" onclick="return confirm('Yakin untuk menghapus obat?')">Hapus</button>
                         </form>
+
                     </td>
                 </tr>
             @endforeach
@@ -51,14 +53,15 @@
             <div class="modal-body">
 
                 <form class="row d-flex flex-column" action="/tabelobat/{{ $obat->id }}" method="post">
+                    @method('put')
                     @csrf
                     <div class="col mb-3">
                         <label for="obat" class="form-label">Nama Obat</label>
-                        <input type="text" name="nama" class="form-control" value={{$obat->nama}} />
+                        <input type="text" name="nama" class="form-control" value="{{$obat->nama}}" />
                     </div>
                     <div class="col mb-3">
                         <label for="obat" class="form-label">Stok</label>
-                        <input type="text" name="stok" class="form-control" value={{$obat->stok}} />
+                        <input type="text" name="stok" class="form-control" value="{{$obat->stok}}" />
                     </div>
                     <button type="submit" class="btn btn-info ms-3 text-light" style="width: 150px">Simpan</button>
                 </form>

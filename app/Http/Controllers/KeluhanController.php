@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Keluhan;
-use App\Http\Requests\StoreKeluhanRequest;
-use App\Http\Requests\UpdateKeluhanRequest;
+use Illuminate\Http\Request;
 
 class KeluhanController extends Controller
 {
@@ -64,13 +63,16 @@ class KeluhanController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateKeluhanRequest  $request
      * @param  \App\Models\Keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateKeluhanRequest $request, Keluhan $keluhan)
+    public function update(Request $request, $id)
     {
-        //
+        $keluhan = Keluhan::find($id);
+        $keluhan->nama = $request->input('nama');
+        $keluhan->update();
+
+        return redirect('/tabelkeluhan')->with('status', 'Nama keluhan berhasil diubah');
     }
 
     /**
@@ -79,8 +81,11 @@ class KeluhanController extends Controller
      * @param  \App\Models\Keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Keluhan $keluhan)
+    public function destroy(Request $request, $id)
     {
-        //
+        $keluhan = Keluhan::find($id);
+        $keluhan->delete();
+
+        return redirect('/tabelkeluhan')->with('isDelete', 'Keluhan berhasil dihapus');
     }
 }

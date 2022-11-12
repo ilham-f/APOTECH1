@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
-use App\Http\Requests\StorecategoryRequest;
-use App\Http\Requests\UpdatecategoryRequest;
+use Illuminate\Http\Request;
+
 
 class CategoryController extends Controller
 {
@@ -69,13 +69,16 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatecategoryRequest  $request
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatecategoryRequest $request, category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->nama = $request->input('nama');
+        $category->update();
+
+        return redirect('/tabelkategori')->with('status', 'Nama kategori berhasil diubah');
     }
 
     /**
@@ -84,8 +87,11 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect('/tabelkategori')->with('isDelete', 'Kategori berhasil dihapus');
     }
 }

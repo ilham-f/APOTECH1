@@ -90,10 +90,10 @@ class ObatController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        // $obat = Obat::find($id);
-        // $obat->delete();
+        $obat = Obat::find($id);
+        $obat->delete();
 
-        // return redirect('/tabelobat')->with('isDelete', 'Obat berhasil dihapus');
+        return redirect('/tabelobat')->with('isDelete', 'Obat berhasil dihapus');
     }
 
 

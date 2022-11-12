@@ -15,8 +15,8 @@ class CreateObatsTable extends Migration
     {
         Schema::create('obats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
             $table->string('nama');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->string('slug')->unique();
             $table->integer('harga');
             $table->integer('stok');

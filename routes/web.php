@@ -5,6 +5,7 @@ use App\Models\Obat;
 use App\Models\Category;
 use App\Models\Keluhan;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\KeluhanController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
@@ -72,6 +73,14 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 // Update & Delete tabel obat
-Route::post('/tabelobat/{id}', [ObatController::class, 'update']);
-// Route::post('/tabelobat/{id}', [ObatController::class, 'destroy']);
+Route::put('/tabelobat/{id}', [ObatController::class, 'update']);
+Route::delete('/tabelobat/{id}', [ObatController::class, 'destroy']);
+
+// Update & Delete tabel keluhan
+Route::put('/tabelkeluhan/{id}', [KeluhanController::class, 'update']);
+Route::delete('/tabelkeluhan/{id}', [KeluhanController::class, 'destroy']);
+
+// Update & Delete tabel kategori
+Route::put('/tabelkategori/{id}', [CategoryController::class, 'update']);
+Route::delete('/tabelkategori/{id}', [CategoryController::class, 'destroy']);
 
