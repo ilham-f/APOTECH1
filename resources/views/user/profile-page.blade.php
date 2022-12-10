@@ -2,10 +2,9 @@
 
 @section('container')
 
-<div class="container">
-    <div class="row">
+<div class="row container-fluid">
         @include('partials.sidebaruser')
-            <div class="col py-3">
+            <div class="col">
                 <h2 class="text-success">Saudara User - example@email.com</h2>
                 <label for="pilihnegara">Negara</label>
                 <select class="form-select w-50" aria-label="Default select example" id="pilihnegara">
@@ -66,9 +65,8 @@
                     <input type="text" class="form-control" id="notelp" placeholder="">
                 </div>
 
-                <button class="btn btn-success">Simpan</button>
+                <button class="btn btn-success mb-3">Simpan</button>
             </div>
-    </div>
 </div>
 
 @endsection

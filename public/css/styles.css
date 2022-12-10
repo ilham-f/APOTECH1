@@ -11442,6 +11442,6 @@ textarea.form-control-lg {
 }
 
 .container-fluid {
-  box-shadow: 0 0 10px rgb(33, 37, 41, .8);
+  /* box-shadow: 0 0 10px rgb(33, 37, 41, .8); */
   background-color: #fff;
 }

@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pemesanans', function (Blueprint $table) {
-            $table->id();
-            $table->string('metode_bayar')->nullable();
-            $table->integer('status');
-            $table->timestamps();
-            $table->foreignId('customer_id')->constrained('customers')->onDelete('cascade');
+        Schema::create('detil_transaksis', function (Blueprint $table) {
+            $table->foreignId('obat_id')->constrained('obats')->onDelete('cascade');
+            $table->foreignId('transaksi_id')->constrained('transaksis')->onDelete('cascade');
+            $table->integer('qty');
+            $table->integer('pricesum');
         });
     }
 
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemesanans');
+        Schema::dropIfExists('detil_transaksis');
     }
 };

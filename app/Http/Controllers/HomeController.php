@@ -29,9 +29,4 @@ class HomeController extends Controller
         return view('user.ubahpassword', [
         ]);
     }
-
-    public function riwayatbeli(){
-        return view('user.riwayatpembelian', [
-        ]);
-    }
 }

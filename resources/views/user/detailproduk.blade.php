@@ -25,7 +25,17 @@
             @endforeach
         </p>
         <a href="{{ url()->previous() }}"><button class="btn btn-success">Kembali</button></a>
-        <button type="submit" class="btn btn-success" value="{{ $obat->category->slug }}">Tambah ke Keranjang</button>
+        @if (Auth::user())
+        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" value="{{ $obat->id }}" name="id">
+            <input type="hidden" value="{{ $obat->nama }}" name="name">
+            <input type="hidden" value="{{ $obat->harga }}" name="price">
+            <input type="hidden" value="{{ $obat->image }}"  name="image">
+            <input type="hidden" value="1" name="quantity">
+            <button type="submit" class="btn btn-success">Tambah ke Keranjang</button>
+        </form>
+        @endif
     </div>
 </div>
 @endsection

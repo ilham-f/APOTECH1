@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             ObatSeeder::class,
-            KeluhanSeeder::class
+            KeluhanSeeder::class,
+            UserSeeder::class
         ]);
 
         $keluhans = Keluhan::all();

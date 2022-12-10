@@ -14,9 +14,8 @@ class ObatController extends Controller
      */
     public function index()
     {
-
         return view('user.produk', [
-            "obats" => Obat::latest()->filter(request(['search']))->paginate(8)->withQueryString()
+            "obats" => Obat::latest()->filter(request(['search']))->paginate(12)->withQueryString()
         ]);
     }
 

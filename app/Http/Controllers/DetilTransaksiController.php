@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
-use App\Http\Requests\StoreCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
+use App\Models\DetilTransaksi;
+use App\Http\Requests\StoreDetilTransaksiRequest;
+use App\Http\Requests\UpdateDetilTransaksiRequest;
 
-class CustomerController extends Controller
+class DetilTransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class CustomerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCustomerRequest  $request
+     * @param  \App\Http\Requests\StoreDetilTransaksiRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCustomerRequest $request)
+    public function store(StoreDetilTransaksiRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\DetilTransaksi  $detilTransaksi
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $customer)
+    public function show(DetilTransaksi $detilTransaksi)
     {
         //
     }
@@ -53,10 +53,10 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\DetilTransaksi  $detilTransaksi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit(DetilTransaksi $detilTransaksi)
     {
         //
     }
@@ -64,11 +64,11 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCustomerRequest  $request
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Http\Requests\UpdateDetilTransaksiRequest  $request
+     * @param  \App\Models\DetilTransaksi  $detilTransaksi
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCustomerRequest $request, Customer $customer)
+    public function update(UpdateDetilTransaksiRequest $request, DetilTransaksi $detilTransaksi)
     {
         //
     }
@@ -76,10 +76,10 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\DetilTransaksi  $detilTransaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy(DetilTransaksi $detilTransaksi)
     {
         //
     }

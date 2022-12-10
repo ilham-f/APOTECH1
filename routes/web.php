@@ -13,6 +13,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,11 +63,18 @@ Route::group(['middleware' => 'auth'], function() {
 
     // Halaman yang bisa diakses oleh Customer
     Route::group(['middleware' => 'cekrole:customer'], function() {
+        Route::get('/afterpmblian', [TransaksiController::class, 'after'])->name('after');
         Route::get('/kirimresep', [HomeController::class, 'resep']);
         Route::get('/profile', [HomeController::class, 'profile']);
         Route::get('/ubahpwd', [HomeController::class, 'ubahpw']);
-        Route::get('/rwytpmblian', [HomeController::class, 'riwayatbeli']);
-        Route::get('/keranjang', [CartController::class, 'index']);
+        Route::get('/rwytpmblian', [TransaksiController::class, 'index']);
+        Route::get('/keranjang', [CartController::class, 'index'])->name('cart.list');
+        Route::post('/detailproduk', [CartController::class, 'addToCart'])->name('cart.store');
+        Route::post('cart-remove', [CartController::class, 'removeCart'])->name('cart.remove');
+        Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+        Route::post('/keranjang', [TransaksiController::class, 'buat'])->name('transaksi.store');
+        Route::get('pembelian/{transaksi:id}', [TransaksiController::class, 'show']);
+        Route::post('cart-clear', [CartController::class, 'clearCart'])->name('cart.clear');
         // Route::get('image/{pembayaran:bukti_bayar}', [ImageController::class, 'index']);
         // Route::get('/exportspembayaran', [PembayaranExportController::class, 'pembayaranExport']);
     });

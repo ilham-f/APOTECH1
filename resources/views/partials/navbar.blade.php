@@ -33,7 +33,7 @@
                 </form>
                 <div class="btn-group ms-2">
                     <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      User
+                      {{ Auth::user()->email }}
                     </button>
 
                     <ul class="dropdown-menu dropdown-menu-end">
