@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Obat;
 use App\Models\Category;
 use App\Models\Keluhan;
@@ -14,6 +15,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +58,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/tabelkategori', [AdminController::class, 'tabelkategori']);
         Route::get('/tambahkategori', [AdminController::class, 'tambahkategori']);
         Route::get('/tabelkeluhan', [AdminController::class, 'tabelkeluhan']);
-        Route::get('/tambahkeluhan', [AdminController::class, 'tambahkeluhanindex']);
+        Route::get('/tambahkeluhan', [AdminController::class, 'tambahkeluhan']);
         // Route::get('image/{pembayaran:bukti_bayar}', [ImageController::class, 'index']);
         // Route::get('/exportspembayaran', [PembayaranExportController::class, 'pembayaranExport']);
     });
@@ -64,9 +66,9 @@ Route::group(['middleware' => 'auth'], function() {
     // Halaman yang bisa diakses oleh Customer
     Route::group(['middleware' => 'cekrole:customer'], function() {
         Route::get('/afterpmblian', [TransaksiController::class, 'after'])->name('after');
-        Route::get('/kirimresep', [HomeController::class, 'resep']);
-        Route::get('/profile', [HomeController::class, 'profile']);
-        Route::get('/ubahpwd', [HomeController::class, 'ubahpw']);
+        Route::get('/kirimresep', [UserController::class, 'resep']);
+        Route::get('/profile', [UserController::class, 'profile']);
+        Route::get('/ubahpwd', [UserController::class, 'ubahpw']);
         Route::get('/rwytpmblian', [TransaksiController::class, 'index']);
         Route::get('/keranjang', [CartController::class, 'index'])->name('cart.list');
         Route::post('/detailproduk', [CartController::class, 'addToCart'])->name('cart.store');
@@ -80,15 +82,22 @@ Route::group(['middleware' => 'auth'], function() {
     });
 });
 
-// Update & Delete tabel obat
+// Create, Update, Delete tabel obat
+Route::post('/tambahobat', [ObatController::class, 'store'])->name('tambahobat');
 Route::put('/tabelobat/{id}', [ObatController::class, 'update']);
 Route::delete('/tabelobat/{id}', [ObatController::class, 'destroy']);
 
-// Update & Delete tabel keluhan
+// Create, Update, Delete tabel keluhan
+Route::post('/tambahkeluhan', [KeluhanController::class, 'store'])->name('tambahkeluhan');
 Route::put('/tabelkeluhan/{id}', [KeluhanController::class, 'update']);
 Route::delete('/tabelkeluhan/{id}', [KeluhanController::class, 'destroy']);
 
-// Update & Delete tabel kategori
+// Create, Update, Delete tabel kategori
+Route::post('/tambahkategori', [CategoryController::class, 'store'])->name('tambahkategori');
 Route::put('/tabelkategori/{id}', [CategoryController::class, 'update']);
 Route::delete('/tabelkategori/{id}', [CategoryController::class, 'destroy']);
 
+// Update User
+Route::put('/profil/{id}', [UserController::class, 'update']);
+// Update Password User
+Route::put('/ubahpw', [UserController::class, 'updatepw']);

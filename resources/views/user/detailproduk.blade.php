@@ -1,11 +1,9 @@
-{{-- @dd($obat->keluhans->last()) --}}
 @extends('layouts.main')
 
 @section('container')
 <div class="container vh-100 d-flex justify-content-evenly mt-5">
-
     <div class="">
-        <img src="{{ asset("assets/img/obats/$obat->image") }}" alt="{{ $obat->slug }}" />
+        <img src="{{ asset("storage/$obat->image") }}" alt="{{ $obat->slug }}" />
     </div>
 
     <div class="container">
@@ -16,7 +14,7 @@
         <p>Keluhan :
             @foreach ($obat->keluhans as $keluhan )
                 @if ($keluhan == $obat->keluhans->last())
-                <small>{{ $keluhan->nama}}</small>
+                    <small>{{ $keluhan->nama}}</small>
                 @else
                     <small>
                         {{ $keluhan->nama . ", " }}
@@ -32,6 +30,7 @@
             <input type="hidden" value="{{ $obat->nama }}" name="name">
             <input type="hidden" value="{{ $obat->harga }}" name="price">
             <input type="hidden" value="{{ $obat->image }}"  name="image">
+            <input type="hidden" value="{{ $obat->image }}" name="image">
             <input type="hidden" value="1" name="quantity">
             <button type="submit" class="btn btn-success">Tambah ke Keranjang</button>
         </form>

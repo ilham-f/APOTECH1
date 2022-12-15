@@ -24,7 +24,6 @@
                         </ul>
                     </li>
                 </ul>
-
                 <a href="/produk" class="m-4 d-flex justify-content-center align-items-center border-0" style="text-decoration: none;">Lihat Semua >></a>
             </div>
 
@@ -34,7 +33,7 @@
                     <div class="col mb-5">
                         <div class="card h-100 shadow">
                             <!-- Product image-->
-                            <img class="card-img-top" src="assets/img/obats/{{ $obat->image }}" alt="{{ $obat->slug }}" />
+                            <img class="card-img-top" src="{{ asset('storage/'.$obat->image) }}" alt="{{ $obat->slug }}" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -59,5 +58,4 @@
                 </div>
             </div>
         </section>
-
 @endsection

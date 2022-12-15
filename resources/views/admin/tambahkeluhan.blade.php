@@ -2,17 +2,20 @@
 
 @section('content')
     <div class="container">
-        <h1>Tambah Kategori</h1>
+        <div class="page-heading">
+            <h3>Tambah Keluhan</h3>
+        </div>
         <div class="card">
             <div class="card-body">
-                <form>
+                <form action="/tambahkeluhan" method="POST">
+                    @csrf
                     <div class="mb-3">
-                      <label for="obat" class="form-label">Nama Kategori</label>
-                      <input type="text" class="form-control" id="obat" aria-describedby="obat">
+                      <label for="nama" class="form-label">Nama Keluhan</label>
+                      <input type="text" class="form-control" id="nama" name="nama">
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="slug" class="form-label">Slug</label>
-                        <input type="text" class="form-control" id="slug" aria-describedby="slug">
+                        <input type="text" class="form-control" id="slug" name="slug">
                         <div id="slughelp" class="form-text">Ketik nama Obat dengan " - " sebagai pengganti spasi</div>
                     </div>
                     <div class="submit d-flex flex-row-reverse mt-5">

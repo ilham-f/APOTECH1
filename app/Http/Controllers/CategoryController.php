@@ -36,9 +36,15 @@ class CategoryController extends Controller
      * @param  \App\Http\Requests\StorecategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorecategoryRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => ['required'],
+            'slug' => ['required']
+        ]);
+
+        Category::create($validated);
+        return redirect('/tabelkategori')->with('alert', 'Kategori baru berhasil ditambahkan');
     }
 
     /**
@@ -76,9 +82,10 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->nama = $request->input('nama');
+        $category->slug = $request->input('slug');
         $category->update();
 
-        return redirect('/tabelkategori')->with('status', 'Nama kategori berhasil diubah');
+        return redirect('/tabelkategori')->with('status', 'Kategori berhasil diubah');
     }
 
     /**

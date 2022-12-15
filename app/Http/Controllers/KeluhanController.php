@@ -33,9 +33,15 @@ class KeluhanController extends Controller
      * @param  \App\Http\Requests\StoreKeluhanRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreKeluhanRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => ['required'],
+            'slug' => ['required']
+        ]);
+
+        Keluhan::create($validated);
+        return redirect('/tabelkeluhan')->with('alert', 'Keluhan baru berhasil ditambahkan');
     }
 
     /**

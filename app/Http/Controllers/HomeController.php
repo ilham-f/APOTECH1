@@ -14,19 +14,4 @@ class HomeController extends Controller
             'categories' => Category::all()
         ]);
     }
-
-    public function resep(){
-        return view('user.kirimresep', [
-        ]);
-    }
-
-    public function profile(){
-        return view('user.profile-page', [
-        ]);
-    }
-
-    public function ubahpw(){
-        return view('user.ubahpassword', [
-        ]);
-    }
 }
