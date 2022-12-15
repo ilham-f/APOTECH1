@@ -16,8 +16,8 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Tanggal : {{ $tra->tanggal }}</h5>
-                                    <p class="card-text">Pukul : {{ $tra->jam }}</p>
-                                    <p class="card-text">Total : {{ $tra->total_harga }}</p>
+                                    <p class="card-text">Pukul : {{ $tra->jam }} WIB</p>
+                                    <p class="card-text">Total : Rp.{{ $tra->total_harga }},00</p>
                                     <p class="card-text">Status : {{ $tra->status }}</p>
                                     <a href="/pembelian/{{ $tra->id }}" class="btn btn-success">Detail</a>
                                 </div>

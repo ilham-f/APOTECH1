@@ -92,18 +92,20 @@
         </div>
         <div class="modal-body">
             @if (Cart::session(auth()->user()->id)->isEmpty())
-            Keranjang Masih Kosong
+            <p>Keranjang Masih Kosong</p>
             @else
-            Apakah Anda Yakin menyelesaikan pembelian?
+            <p>Apakah Anda Yakin menyelesaikan pembelian?</p>
+            <form action="{{ route('transaksi.store') }}" method="POST" id="form1">
+                @csrf
+                <label for="Alamat" class=""><h6>Masukkan Alamat</h6></label>
+                <input type="text" class="form-control w-75" placeholder="Alamat" id="alamat" name="alamat" required>
+            </form>
             @endif
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             @if (!Cart::session(auth()->user()->id)->isEmpty())
-            <form action="{{ route('transaksi.store') }}" method="POST">
-                @csrf
-                <button class="w-100 btn btn-success mt-3 mb-3">Beli</button>
-            </form>
+            <button form="form1" class="btn btn-success mt-3 mb-3">Beli</button>
             @endif
         </div>
       </div>

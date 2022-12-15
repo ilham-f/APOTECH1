@@ -35,7 +35,7 @@ class TransaksiController extends Controller
 
     }
 
-    public function buat()
+    public function buat(Request $request)
     {
 
         $userid = auth()->user()->id;
@@ -45,7 +45,8 @@ class TransaksiController extends Controller
             'jumlah_barang' => \Cart::session($userid)->getTotalQuantity(),
             'total_harga' => \Cart::session($userid)->getTotal(),
             'tanggal' => Carbon::now()->translatedFormat('d F Y'),
-            'jam' => Carbon::now()->format('H:i')
+            'jam' => Carbon::now()->format('H:i'),
+            'alamat' => $request->alamat
         ]);
 
         $transaksi = Transaksi::latest('id')->first();

@@ -26,7 +26,7 @@
                                     <div class="col-8">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $obat->nama }}</h5>
-                                            <p class="card-text">{{ $obat->harga }}</p>
+                                            <p class="card-text">Rp.{{ $obat->harga }},00</p>
                                             <p class="card-text">Kuantitas : {{ $obat->pivot->qty }}</p>
                                             <p class="card-text">Subtotal : {{ $obat->pivot->pricesum }}</p>
                                         </div>
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             @endforeach
-                            <h5 class="card-text">Total Pembelian : {{ $transaksi->total_harga }}</h5>
+                            <h5 class="card-text">Total Pembelian : Rp.{{ $transaksi->total_harga }},00</h5>
                             <h5 class="card-text">Jumlah Barang : {{ $transaksi->jumlah_barang }}</h5>
                           <a href="/rwytpmblian" class="btn btn-success mt-2">Kembali</a>
                         </div>

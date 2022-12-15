@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('qty');
             $table->integer('pricesum');
         });
+        
     }
 
     /**
