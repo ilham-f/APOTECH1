@@ -37,9 +37,23 @@ class ObatController extends Controller
      * @param  \App\Http\Requests\StoreObatRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreObatRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => ['required'],
+            'category_id' => ['required'],
+            'slug' => ['required'],
+            'harga' => ['required'],
+            'stok' => ['required'],
+            'image' => ['image','file']
+        ]);
+
+        if ($request->file('image')) {
+            $validated['image'] = $request->file('image')->store('obats');
+        }
+
+        Obat::create($validated);
+        return redirect('/tabelobat')->with('alert', 'Obat baru berhasil ditambahkan');
     }
 
     /**
@@ -54,17 +68,6 @@ class ObatController extends Controller
             "title" => "Detail Produk",
             "obat" => $obat
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Obat  $obat
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Obat $obat)
-    {
-        //
     }
 
     /**

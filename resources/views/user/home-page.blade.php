@@ -33,7 +33,11 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
+<<<<<<< Updated upstream
                             <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+=======
+                            <img class="card-img-top" src="{{ asset('storage/'.$obat->image) }}" alt="{{ $obat->slug }}" />
+>>>>>>> Stashed changes
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
