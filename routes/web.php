@@ -16,6 +16,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ResepController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,3 +102,6 @@ Route::delete('/tabelkategori/{id}', [CategoryController::class, 'destroy']);
 Route::put('/profil/{id}', [UserController::class, 'update']);
 // Update Password User
 Route::put('/ubahpw', [UserController::class, 'updatepw']);
+// Kirim Resep
+Route::post('/kirimresep', [ResepController::class, 'store']);
+

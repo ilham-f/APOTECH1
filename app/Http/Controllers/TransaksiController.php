@@ -20,7 +20,9 @@ class TransaksiController extends Controller
     public function index()
     {
         $userid = auth()->user()->id;
+        $cartItems = \Cart::session($userid)->getContent();
         return view('user.riwayatpembelian', [
+            'cart' => $cartItems,
             'transaksi' => Transaksi::where('user_id', '=', $userid)->latest()->get()
         ]);
     }
@@ -81,14 +83,21 @@ class TransaksiController extends Controller
      */
     public function show(Transaksi $transaksi)
     {
+        $userid = auth()->user()->id;
+        $cartItems = \Cart::session($userid)->getContent();
         return view('user.detailpembelian', [
+            'cart' => $cartItems,
             'transaksi' => $transaksi
         ]);
     }
 
     public function after()
     {
-        return view('user.afterpembelian');
+        $userid = auth()->user()->id;
+        $cartItems = \Cart::session($userid)->getContent();
+        return view('user.afterpembelian',[
+            'cart' => $cartItems
+        ]);
     }
 
     /**

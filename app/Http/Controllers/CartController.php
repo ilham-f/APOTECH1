@@ -21,6 +21,7 @@ class CartController extends Controller
         $cartItems = \Cart::session($userid)->getContent();
         // dd($cartItems);
         return view('user.keranjang', [
+            'cart' => $cartItems,
             'obats' => $cartItems
         ]);
     }

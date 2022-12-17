@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Obat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ObatController extends Controller
 {
@@ -14,9 +15,19 @@ class ObatController extends Controller
      */
     public function index()
     {
-        return view('user.produk', [
-            "obats" => Obat::latest()->filter(request(['search']))->paginate(12)->withQueryString()
-        ]);
+        if (Auth::user()) {
+            $userid = Auth::user()->id;
+            $cartItems = \Cart::session($userid)->getContent();
+            return view('user.produk',[
+                'cart' => $cartItems,
+                "obats" => Obat::latest()->filter(request(['search']))->paginate(12)->withQueryString()
+            ]);
+        }
+        else{
+            return view('user.produk', [
+                "obats" => Obat::latest()->filter(request(['search']))->paginate(12)->withQueryString()
+            ]);
+        }
     }
 
     /**
@@ -62,10 +73,22 @@ class ObatController extends Controller
      */
     public function show(Obat $obat)
     {
-        return view('user.detailproduk', [
-            "title" => "Detail Produk",
-            "obat" => $obat
-        ]);
+        if (Auth::user()) {
+            $userid = Auth::user()->id;
+            $cartItems = \Cart::session($userid)->getContent();
+            return view('user.detailproduk',[
+                "title" => "Detail Produk",
+                "cart" => $cartItems,
+                "obat" => $obat
+
+            ]);
+        }
+        else{
+            return view('user.detailproduk', [
+                "title" => "Detail Produk",
+                "obat" => $obat
+            ]);
+        }
     }
 
     /**

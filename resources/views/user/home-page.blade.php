@@ -49,8 +49,21 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-success mt-auto" href="/produk/{{ $obat->slug }}">Detail Produk</a></div>
+                            <div class="d-flex justify-content-center card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center me-2"><a class="btn btn-outline-success mt-auto" href="/produk/{{ $obat->slug }}">Detail</a></div>
+                                @if (Auth::user())
+                                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" value="{{ $obat->id }}" name="id">
+                                    <input type="hidden" value="{{ $obat->nama }}" name="name">
+                                    <input type="hidden" value="{{ $obat->harga }}" name="price">
+                                    <input type="hidden" value="{{ $obat->image }}"  name="image">
+                                    <input type="hidden" value="1" name="quantity">
+                                    <button type="submit" class="btn btn-outline-success">
+                                        <i class="bi bi-cart-plus"></i>
+                                    </button>
+                                </form>
+                                @endif
                             </div>
                         </div>
                     </div>

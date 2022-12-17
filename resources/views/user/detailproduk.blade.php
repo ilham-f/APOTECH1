@@ -22,19 +22,22 @@
                 @endif
             @endforeach
         </p>
-        <a href="{{ url()->previous() }}"><button class="btn btn-success">Kembali</button></a>
-        @if (Auth::user())
-        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <input type="hidden" value="{{ $obat->id }}" name="id">
-            <input type="hidden" value="{{ $obat->nama }}" name="name">
-            <input type="hidden" value="{{ $obat->harga }}" name="price">
-            <input type="hidden" value="{{ $obat->image }}"  name="image">
-            <input type="hidden" value="{{ $obat->image }}" name="image">
-            <input type="hidden" value="1" name="quantity">
-            <button type="submit" class="btn btn-success">Tambah ke Keranjang</button>
-        </form>
-        @endif
+        <div class="d-flex">
+            <a class="me-2" href="{{ url()->previous() }}"><button class="btn btn-outline-success">Kembali</button></a>
+            @if (Auth::user())
+            <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" value="{{ $obat->id }}" name="id">
+                <input type="hidden" value="{{ $obat->nama }}" name="name">
+                <input type="hidden" value="{{ $obat->harga }}" name="price">
+                <input type="hidden" value="{{ $obat->image }}"  name="image">
+                <input type="hidden" value="1" name="quantity">
+                <button type="submit" class="btn btn-outline-success">
+                    <i class="bi bi-cart-plus"></i>
+                </button>
+            </form>
+            @endif
+        </div>
     </div>
 </div>
 @endsection

@@ -18,7 +18,7 @@
                         <a class="btn btn-outline-success mt-auto" href="/keranjang">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-success text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-success text-white ms-1 rounded-pill">{{ $cart->count() }}</span>
                         </a>
                     </div>
                 </form>

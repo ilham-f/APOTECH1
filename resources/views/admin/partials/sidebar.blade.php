@@ -78,7 +78,8 @@
                 <h6 class="collapse-header">Table</h6>
                 <a class="collapse-item" href="utilities-color.html">Riwayat Penjualan</a>
                 <a class="collapse-item" href="utilities-border.html">Pemasukan</a>
-                <a class="collapse-item" href="utilities-animation.html">Pengeluaran</a>                    </div>
+                <a class="collapse-item" href="utilities-animation.html">Pengeluaran</a>
+            </div>
         </div>
     </li>
 

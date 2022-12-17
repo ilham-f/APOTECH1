@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class CategoryController extends Controller
@@ -15,9 +16,19 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('user.categories', [
-            'categories' => Category::all()
-        ]);
+        if (Auth::user()) {
+            $userid = Auth::user()->id;
+            $cartItems = \Cart::session($userid)->getContent();
+            return view('user.categories',[
+                'cart' => $cartItems,
+                'categories' => Category::all()
+            ]);
+        }
+        else{
+            return view('user.categories', [
+                'categories' => Category::all()
+            ]);
+        }
     }
 
     /**
@@ -55,10 +66,21 @@ class CategoryController extends Controller
      */
     public function show(category $category)
     {
-        return view('user.produk', [
-            'title' => "Obat Kategori : $category->nama",
-            'obats' => $category->obats()->paginate(8)
-        ]);
+        if (Auth::user()) {
+            $userid = Auth::user()->id;
+            $cartItems = \Cart::session($userid)->getContent();
+            return view('user.produk',[
+                'cart' => $cartItems,
+                'title' => "Obat Kategori : $category->nama",
+                'obats' => $category->obats()->paginate(8)
+            ]);
+        }
+        else{
+            return view('user.produk', [
+                'title' => "Obat Kategori : $category->nama",
+                'obats' => $category->obats()->paginate(8)
+            ]);
+        }
     }
 
     /**
