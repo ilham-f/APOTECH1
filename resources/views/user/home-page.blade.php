@@ -57,8 +57,20 @@
             </div>
         </section>
 
+<<<<<<< Updated upstream
         <!-- Footer-->
         <footer class="py-5 bg-success">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Apotech 2022</p></div>
         </footer>
+=======
+        <script>
+            let msg = '{{Session::get('alert')}}';
+
+            let exist = '{{Session::has('alert')}}';
+
+            if(exist){
+                alert(msg);
+            }
+        </script>
+>>>>>>> Stashed changes
 @endsection

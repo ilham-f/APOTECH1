@@ -36,6 +36,7 @@
                 <div class="text-center ms-2">
                     <a class="btn btn-outline-dark mt-auto" href="/login">Masuk</a>
                 </div>
+<<<<<<< Updated upstream
             </form>
 
             <form class="d-flex">
@@ -43,6 +44,26 @@
                     <a class="btn btn-outline-dark mt-auto" href="/signUp">Daftar</a>
                 </div>
             </form>
+=======
+            @else
+                <form class="d-flex" role="search" action='/produk'>
+                    <input class="form-control " type="search" name="search" placeholder="Cari Obat" aria-label="Search" value="{{ request('search') }}" style="border-radius: 5px 0 0 5px;">
+                    <button class="btn btn-success" type="submit" style="border-radius: 0 5px 5px 0;">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+                <form class="d-flex">
+                    <div class="text-center ms-2">
+                        <a class="btn btn-outline-success mt-auto" data-bs-toggle="modal" data-bs-target="#login">Masuk</a>
+                    </div>
+                </form>
+                <form class="d-flex">
+                    <div class="text-center ms-2">
+                        <a class="btn btn-outline-success mt-auto" data-bs-toggle="modal" data-bs-target="#daftar">Daftar</a>
+                    </div>
+                </form>
+            @endif
+>>>>>>> Stashed changes
         </div>
     </div>
 </nav>
