@@ -16,8 +16,13 @@
                                     <div class="col-1">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     </div>
+<<<<<<< Updated upstream
                                     <div class="col-3">
                                         <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="img-fluid rounded-start" alt="...">
+=======
+                                    <div class="col-4">
+                                        <img src="{{ asset("storage/".$obat->attributes->image) }}" class="img-fluid rounded-start" alt="{{ $obat->slug }}">
+>>>>>>> Stashed changes
                                     </div>
                                     <div class="col-8">
                                         <div class="card-body">
