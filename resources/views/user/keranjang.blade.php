@@ -25,9 +25,11 @@
                                     <div class="row g-0 mt-4">
                                         <div class="">
                                     </div>
+
                                     <div class="col-4">
-                                        <img src="assets/img/obats/{{ $obat->attributes->image }}" class="img-fluid rounded-start" alt="{{ $obat->slug }}">
+                                        <img src="{{ asset("storage/".$obat->attributes->image) }}" class="img-fluid rounded-start" alt="{{ $obat->slug }}">
                                     </div>
+
                                     <div class="col-8">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $obat->name }}</h5>

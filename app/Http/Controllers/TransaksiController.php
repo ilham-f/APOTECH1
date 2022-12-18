@@ -59,6 +59,7 @@ class TransaksiController extends Controller
 
         foreach ($cartItems as $obat) {
             $transaksi->obats()->attach($obat->id, ['qty' => $obat->quantity, 'pricesum' => $obat->getPriceSum()]);
+            Obats::where('id', $obat->id)->decrement('stok', $obat->quantity);
         }
 
         return redirect()->route('after');

@@ -21,7 +21,7 @@
                           <div class="card mt-2">
                               <div class="row g-0">
                                   <div class="col-4">
-                                      <img src="{{ asset("assets/img/obats/$obat->image") }}" class="img-fluid rounded-start" alt="{{ $obat->image }}">
+                                      <img src="{{ asset("storage/$obat->image") }}" class="img-fluid rounded-start" alt="{{ $obat->image }}">
                                     </div>
                                     <div class="col-8">
                                         <div class="card-body">
