@@ -6,11 +6,6 @@
         <div class="row p-4">
             <div class="col card m-2">
                 <h4 class="text-success my-3">Obat</h4>
-                {{-- @if ($message = Session::get('success'))
-                          <div class="p-4 mb-3 bg-green-400 rounded">
-                              <p class="text-green-800">{{ $message }}</p>
-                          </div>
-                @endif --}}
                 <div class="row">
                     <div class="col mx-3">
                         @if (Cart::session(auth()->user()->id)->isEmpty())
@@ -31,34 +26,33 @@
                                                     class="img-fluid rounded-start" alt="{{ $obat->slug }}">
                                             </div>
 
-                                            <div class="col-8">
+                                            <div class="col-7">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $obat->name }}</h5>
                                                     <p class="card-text">Rp{{ $obat->price }},00 / Unit</p>
                                                     <p class="card-text">Subtotal : {{ $obat->getPriceSum() }}</p>
-                                                    <div class="btn-toolbar mb-3" role="toolbar"
-                                                        aria-label="Toolbar with button groups" id="tambahstok">
-                                                        <div class="btn-group me-1" role="group" aria-label="First group">
-                                                            <form action="{{ route('cart.update') }}" method="POST">
-                                                                @csrf
-                                                                <input type="hidden" name="id"
-                                                                    value="{{ $obat->id }}">
-                                                                <input type="number" min="1" name="quantity"
-                                                                    value="{{ $obat->quantity }}"
-                                                                    class="btn btn-outline-success text-center" />
-                                                                <button type="submit" class="btn btn-info">Update</button>
-                                                            </form>
-                                                        </div>
-                                                        <div>
-                                                            <form action="{{ route('cart.remove') }}" method="POST">
-                                                                @csrf
-                                                                <input type="hidden" value="{{ $obat->id }}"
-                                                                    name="id">
-                                                                <button class="btn btn-danger">x</button>
-                                                            </form>
-                                                        </div>
+                                                    <div class="d-flex">
+                                                        <form action="{{ route('cart.update') }}" method="POST"
+                                                            class="w-60">
+                                                            @csrf
+                                                            <input type="hidden" name="id"
+                                                                value="{{ $obat->id }}">
+                                                            <input type="number" min="1" name="quantity"
+                                                                value="{{ $obat->quantity }}"
+                                                                class="btn btn-outline-success text-center"
+                                                                style="width: 20%" />
+                                                            <button type="submit" class="btn btn-info">Simpan</button>
+                                                        </form>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="col">
+                                                <form action="{{ route('cart.remove') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" value="{{ $obat->id }}"
+                                                        name="id">
+                                                    <button class="btn btn-danger">x</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +60,7 @@
                             @endforeach
                             <form action="{{ route('cart.clear') }}" method="POST">
                                 @csrf
-                                <button class="btn btn-danger mb-3">Clear</button>
+                                <button class="btn btn-danger mb-3">Hapus Semua</button>
                             </form>
                             {{-- Akhir Obat --}}
                         @endif
@@ -85,8 +79,13 @@
                 <button type="button" class="mt-2 btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Beli
                 </button>
+                @if (!Cart::session(auth()->user()->id)->isEmpty())
+                    <button type="button" class="mt-2 btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Beli
+                    </button>
+                @endif
+
             </div>
-            {{-- Akhir Ringkasan --}}
         </div>
     </div>
 
@@ -104,25 +103,22 @@
                         <p>Apakah Anda Yakin menyelesaikan pembelian?</p>
                         <form action="{{ route('transaksi.store') }}" method="POST" id="form1">
                             @csrf
-                            <<<<<<< HEAD <label for="Alamat" class="">
-                                <h6>Masukkan Alamat</h6></label>
-                                <input type="text" class="form-control w-75" placeholder="Alamat" id="alamat"
-                                    name="alamat" required>
-                                =======
-                                >>>>>>> hussein
+                            <label for="Alamat" class="">
+                                <h6>Alamat Pengiriman</h6>
+                            </label>
+                            <input type="text" class="form-control w-75" placeholder="Alamat" id="alamat"
+                                name="alamat" value="{{ Auth::user()->alamat }}" required>
                         </form>
                     @endif
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
                     @if (!Cart::session(auth()->user()->id)->isEmpty())
                         <button form="form1" class="btn btn-success mt-3 mb-3">Beli</button>
                     @endif
                 </div>
             </div>
-            <<<<<<< HEAD=======>>>>>>> Stashed changes
-                >>>>>>> hussein
+            {{-- Akhir Ringkasan --}}
         </div>
     </div>
-
 @endsection
