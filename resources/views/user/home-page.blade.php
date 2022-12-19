@@ -71,4 +71,13 @@
                 </div>
             </div>
         </section>
+        <script>
+            let msg = '{{Session::get('alert')}}';
+
+            let exist = '{{Session::has('alert')}}';
+
+            if(exist){
+                alert(msg);
+            }
+        </script>
 @endsection
