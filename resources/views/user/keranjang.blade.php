@@ -118,5 +118,34 @@
                 <button class=" w-100 btn btn-success mt-3 mb-3">Beli</button>
             </div>
         </div>
+<<<<<<< Updated upstream
+=======
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi Pembelian</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            @if (Cart::session(auth()->user()->id)->isEmpty())
+            <p>Keranjang Masih Kosong</p>
+            @else
+            <p>Apakah Anda Yakin menyelesaikan pembelian?</p>
+            <form action="{{ route('transaksi.store') }}" method="POST" id="form1">
+                @csrf
+            </form>
+            @endif
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            @if (!Cart::session(auth()->user()->id)->isEmpty())
+            <button form="form1" class="btn btn-success mt-3 mb-3">Beli</button>
+            @endif
+        </div>
+      </div>
+>>>>>>> Stashed changes
     </div>
 @endsection

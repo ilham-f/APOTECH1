@@ -47,7 +47,7 @@ class KeluhanController extends Controller
      */
     public function show(Keluhan $keluhan)
     {
-        //
+
     }
 
     /**

@@ -45,7 +45,32 @@ class ObatController extends Controller
      */
     public function store(StoreObatRequest $request)
     {
+<<<<<<< Updated upstream
         //
+=======
+        $validated = $request->validate([
+            'nama' => ['required'],
+            'category_id' => ['required'],
+            'slug' => ['required'],
+            'harga' => ['required'],
+            'stok' => ['required'],
+            'image' => ['image','file']
+        ]);
+
+        if ($request->file('image')) {
+            $validated['image'] = $request->file('image')->store('obats');
+        }
+
+        Obat::create($validated);
+
+        $obatt = Obat::latest('id')->first();
+
+        foreach ($request->input('keluhans') as $keluhan) {
+            $obatt->keluhans()->attach($keluhan);
+        }
+
+        return redirect('/tabelobat')->with('alert', 'Obat baru berhasil ditambahkan');
+>>>>>>> Stashed changes
     }
 
     /**
