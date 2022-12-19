@@ -26,7 +26,7 @@ class TransaksiController extends Controller
             'title' => 'Pesanan Saya',
             'cart' => $cartItems,
             'users' => User::all(),
-            'transaksi' => Transaksi::where('user_id', '=', $userid)->latest()->get()
+            'transaksi' => Transaksi::where('user_id', '=', $userid)->latest()->paginate(2)
         ]);
     }
 
