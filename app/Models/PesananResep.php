@@ -5,19 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Resep extends Model
+class PesananResep extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
 
-    public function user()
+    public function resep()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Resep::class);
     }
 
-    public function pesanan_resep()
-    {
-        return $this->hasOne(PesananResep::class);
-    }
 }

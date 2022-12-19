@@ -23,7 +23,7 @@
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex">
-                            <img src="assets/img/logo.png" alt="logo" style="width: 50px; height: 50px;">
+                            <img src="{{ asset('assets/img/logo.png') }}" alt="logo" style="width: 50px; height: 50px;">
                             <h3 class="pt-2"><a href="/admin" class="text-success ms-2">Apotech</a><h3>
                         </div>
                         <div class="toggler">
@@ -70,13 +70,16 @@
                             </a>
                             <ul class="submenu">
                                 <li class="submenu-item">
-                                    <a href="">Riwayat Penjualan</a>
+                                    <a href="/riwayat">Riwayat Transaksi</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="">Pemasukan</a>
+                                    <a href="/resep">Resep Masuk</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="">Pengeluaran</a>
+                                    <a href="/pesananresep">Pesanan Resep</a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="/buatpesananresep">Buat Pesanan Resep</a>
                                 </li>
                             </ul>
                         </li>

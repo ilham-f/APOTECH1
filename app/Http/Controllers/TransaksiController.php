@@ -30,6 +30,23 @@ class TransaksiController extends Controller
         ]);
     }
 
+    public function indexadmin()
+    {
+        return view('admin.riwayattransaksi', [
+            'transaksi' => Transaksi::latest()->paginate(2),
+            'title' => 'Riwayat Transaksi'
+        ]);
+    }
+
+    public function getSumTransaksi()
+    {
+        $result = Transaksi::sum('total_harga');
+        return view('admin.admin', [
+            'jumlahpemasukan' => $result,
+            'title' => 'Home'
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -51,7 +68,7 @@ class TransaksiController extends Controller
             'total_harga' => \Cart::session($userid)->getTotal(),
             'tanggal' => Carbon::now()->translatedFormat('d F Y'),
             'jam' => Carbon::now()->format('H:i'),
-            'alamat' => $request->alamat
+            'alamat' => auth()->user()->alamat
         ]);
 
         $transaksi = Transaksi::latest('id')->first();
@@ -93,6 +110,22 @@ class TransaksiController extends Controller
             'cart' => $cartItems,
             'transaksi' => $transaksi
         ]);
+    }
+
+    public function showadmin(Transaksi $transaksi)
+    {
+        return view('admin.detailriwayattransaksi', [
+            'title' => 'Detail Transaksi',
+            'transaksi' => $transaksi
+        ]);
+    }
+
+    public function updateStatTransaksi(Request $request)
+    {
+        $transaksi = Transaksi::find($request['id']);
+        $transaksi->update(['status' => $request['status']]);
+        return redirect()->back();
+
     }
 
     public function after()

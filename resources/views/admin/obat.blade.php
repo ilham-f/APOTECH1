@@ -149,6 +149,18 @@
                         </div>
 
                         <div class="mb-3 mt-3">
+                            <label for="formkeluh" class="form-label">Keluhan</label>
+                            @foreach ($keluhan as $keluh)
+                            <div class="form-check" id="formkeluh">
+                                <input class="form-check-input" type="checkbox" value="{{ $keluh->id }}" id="{{ $keluh->nama }}" name="keluhans[]">
+                                <label class="form-check-label" for="{{ $keluh->nama }}">
+                                    {{ $keluh->nama }}
+                                </label>
+                            </div>
+                            @endforeach
+                        </div>
+
+                        <div class="mb-3 mt-3">
                             <label for="harga" class="form-label">Harga</label>
                             <input type="number" class="form-control" id="harga" name="harga">
                         </div>

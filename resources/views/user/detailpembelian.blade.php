@@ -58,6 +58,10 @@
                                     <strong class="card-text">Total Pembelian : Rp.{{ $transaksi->total_harga }},00</strong>
                                 </div>
                             </div>
+                            @endforeach
+                            <h5 class="card-text">Total Pembelian : Rp.{{ $transaksi->total_harga }},00</h5>
+                            <h5 class="card-text">Jumlah Barang : {{ $transaksi->jumlah_barang }}</h5>
+                          <a href="{{ url()->previous() }}" class="btn btn-success mt-2">Kembali</a>
                         </div>
                     </div>
                 </div>

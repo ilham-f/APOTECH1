@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ResepController;
+use App\Http\Controllers\PesananResepController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,14 +38,12 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('categories/{category:slug}', [CategoryController::class, 'show']);
 
 // User Regis
-Route::get('/regis', [RegisterController::class, 'index']);
 Route::post('/regis', [RegisterController::class, 'store']);
 
 // Admin Logout
 Route::post('/admin-logout', [AdminLoginController::class, 'logout']);
 
 // Customer Login-Logout
-Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -60,8 +59,6 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/tambahkategori', [AdminController::class, 'tambahkategori']);
         Route::get('/tabelkeluhan', [AdminController::class, 'tabelkeluhan']);
         Route::get('/tambahkeluhan', [AdminController::class, 'tambahkeluhan']);
-        // Route::get('image/{pembayaran:bukti_bayar}', [ImageController::class, 'index']);
-        // Route::get('/exportspembayaran', [PembayaranExportController::class, 'pembayaranExport']);
     });
 
     // Halaman yang bisa diakses oleh Customer
@@ -78,8 +75,6 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/keranjang', [TransaksiController::class, 'buat'])->name('transaksi.store');
         Route::get('pembelian/{transaksi:id}', [TransaksiController::class, 'show']);
         Route::post('cart-clear', [CartController::class, 'clearCart'])->name('cart.clear');
-        // Route::get('image/{pembayaran:bukti_bayar}', [ImageController::class, 'index']);
-        // Route::get('/exportspembayaran', [PembayaranExportController::class, 'pembayaranExport']);
     });
 });
 
