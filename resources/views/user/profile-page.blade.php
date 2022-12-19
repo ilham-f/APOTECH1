@@ -77,24 +77,6 @@
                                 <label for="jk">Jenis Kelamin</label>
                                 <br>
                                 <select class="form-select border-1 rounded mt-2" name="jk">
-                                    <option selected>Jenis Kelamin</option>
-                                        @if (!$user->jk)
-                                            <option value="1">Laki-laki</option>
-                                            <option value="0">Perempuan</option>
-                                        @elseif ($user->jk == 1)
-                                            <option selected value="{{ $user->jk }}">Laki-laki</option>
-                                            <option value="0">Perempuan</option>
-                                        @elseif ($user->jk == 0)
-                                            <option selected value="{{ $user->jk }}">Perempuan</option>
-                                            <option value="1">Laki-laki</option>
-                                        @endif
-                                </select>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="jk">Jenis Kelamin</label>
-                                <br>
-                                <select class="form-select border-1 rounded mt-2" name="jk">
-                                    <option selected>Jenis Kelamin</option>
                                     @if (!$user->jk)
                                         <option value="1">Laki-laki</option>
                                         <option value="0">Perempuan</option>
