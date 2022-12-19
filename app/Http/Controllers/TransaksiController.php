@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
 use App\Models\Obat;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTransaksiRequest;
@@ -22,7 +23,9 @@ class TransaksiController extends Controller
         $userid = auth()->user()->id;
         $cartItems = \Cart::session($userid)->getContent();
         return view('user.riwayatpembelian', [
+            'title' => 'Pesanan Saya',
             'cart' => $cartItems,
+            'users' => User::all(),
             'transaksi' => Transaksi::where('user_id', '=', $userid)->latest()->get()
         ]);
     }
@@ -59,7 +62,7 @@ class TransaksiController extends Controller
 
         foreach ($cartItems as $obat) {
             $transaksi->obats()->attach($obat->id, ['qty' => $obat->quantity, 'pricesum' => $obat->getPriceSum()]);
-            Obats::where('id', $obat->id)->decrement('stok', $obat->quantity);
+            Obat::where('id', $obat->id)->decrement('stok', $obat->quantity);
         }
 
         return redirect()->route('after');

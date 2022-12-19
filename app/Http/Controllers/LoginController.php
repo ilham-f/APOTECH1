@@ -39,7 +39,7 @@ class LoginController extends Controller
             }
         }
 
-        return back()->with('alert', 'Login gagal!');
+        return back()->with('alert', 'Gagal masuk ke akun Anda, silakan coba lagi!');
     }
 
     public function logout(Request $request)
@@ -50,6 +50,6 @@ class LoginController extends Controller
 
         request()->session()->regenerateToken();
 
-        return redirect()->intended('/login');
+        return redirect()->intended('/');
     }
 }

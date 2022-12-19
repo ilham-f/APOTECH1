@@ -71,6 +71,7 @@
                 </div>
             </div>
         </section>
+        
         <script>
             let msg = '{{Session::get('alert')}}';
 

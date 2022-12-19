@@ -2,52 +2,51 @@
 
 @section('container')
     <div class="container-fluid d-flex justify-content-center align-items-center bg-success" style="height: 91.5vh;">
-        <div class="card shadow" style="width: 800px">
-            <div class="card-body d-flex flex-column align-items-center">
-                <div class="row g-0 my-5">
-                    <div class="col-md-4 text-center"
-                        style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                        <div class="d-flex flex-column align-items-center">
-                            @if (Auth::user()->jk == 1)
-                                <img src="assets/img/male.jpg"
-                                    alt="Avatar" class="img-fluid" style="width: 80px;" />
-                            @else
-                                <img src="assets/img/female.jpg"
-                                alt="Avatar" class="img-fluid" style="width: 80px;" />
-                            @endif
-                            <small class="fst-italic mt-2 mb-3">{{ Auth::user()->nama }}</small>
-                        </div>
-                        <button style="width: 60%;" class="btn btn-success mb-2" data-bs-toggle="modal"
-                            data-bs-target="#profil-{{ Auth::user()->id }}"><small>Ubah Profil</small>
-                        </button>
-                        <button style="width: 60%;" class="btn btn-success mb-2" data-bs-toggle="modal"
-                            data-bs-target="#ubahpw"><small>Ubah Password</small>
-                        </button>
-                        <button style="width: 60%;" class="btn btn-success" onclick="location.href='/rwytpmblian'"
-                            type="button">
-                            <small>Pesanan Saya</small>
-                        </button>
+        <div class="card shadow" style="width: 1200px; height: 600px">
+            <div class="card-body d-flex justify-content-between py-4">
+                <div class="col-md-4 text-center"
+                    style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; width: 20%">
+                    <div class="d-flex flex-column align-items-center">
+                        @if (Auth::user()->jk == 1)
+                            <img src="{{ asset('assets/img/male.jpg') }}" alt="Avatar" class="img-fluid" style="width: 80px;" />
+                        @else
+                            <img src="{{ asset('assets/img/female.jpg') }}" alt="Avatar" class="img-fluid" style="width: 80px;" />
+                        @endif
+                        <small class="fst-italic mt-2 mb-3">{{ Auth::user()->nama }}</small>
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body p-3">
-                            @if (session('status'))
-                                <div class="alert alert-success">{{ session('status') }}</div>
-                            @endif
-                            <h6>Akun Saya</h6>
-                            <hr class="mt-0 mb-3">
-                            <div class="row pt-1">
-                                <div class="col-6 mb-3">
-                                    <h6>Email</h6>
-                                    <p class="text-muted">{{ Auth::user()->email }}</p>
-                                </div>
-                                <div class="col-6 mb-3">
-                                    <h6>Phone</h6>
-                                    <p class="text-muted">{{ Auth::user()->notelp }}</p>
-                                </div>
-                                <div class="col-10 mb-3">
-                                    <h6>Alamat</h6>
-                                    <p class="text-muted">{{ Auth::user()->alamat }}</p>
-                                </div>
+                    <button style="width: 60%;" class="btn btn-outline-success mb-2"
+                        onclick="location.href='/profile'"><small>Profil Saya</small>
+                    </button>
+                    <button style="width: 60%;" class="btn btn-outline-success mb-2" data-bs-toggle="modal"
+                        data-bs-target="#profil-{{ Auth::user()->id }}"><small>Ubah Profil</small>
+                    </button>
+                    <button style="width: 60%;" class="btn btn-outline-success mb-2" data-bs-toggle="modal"
+                        data-bs-target="#ubahpw"><small>Ubah Password</small>
+                    </button>
+                    <button style="width: 60%;" class="btn btn-outline-success" onclick="location.href='/rwytpmblian'"
+                        type="button">
+                        <small>Pesanan Saya</small>
+                    </button>
+                </div>
+                <div class="col-md-7 me-4" style="width: 70%">
+                    <div class="card-body p-3">
+                        @if (session('status'))
+                            <div class="alert alert-success">{{ session('status') }}</div>
+                        @endif
+                        <h4>Akun Saya</h4>
+                        <hr class="mt-0 mb-3">
+                        <div class="row pt-1">
+                            <div class="col-6 mb-3">
+                                <h6>Email</h6>
+                                <p class="text-muted">{{ Auth::user()->email }}</p>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <h6>Phone</h6>
+                                <p class="text-muted">{{ Auth::user()->notelp }}</p>
+                            </div>
+                            <div class="col-10 mb-3">
+                                <h6>Alamat</h6>
+                                <p class="text-muted">{{ Auth::user()->alamat }}</p>
                             </div>
                         </div>
                     </div>
@@ -92,6 +91,23 @@
                                 </select>
                             </div>
                             <div class="col mb-3">
+                                <label for="jk">Jenis Kelamin</label>
+                                <br>
+                                <select class="form-select border-1 rounded mt-2" name="jk">
+                                    <option selected>Jenis Kelamin</option>
+                                    @if (!$user->jk)
+                                        <option value="1">Laki-laki</option>
+                                        <option value="0">Perempuan</option>
+                                    @elseif ($user->jk == 1)
+                                        <option selected value="{{ $user->jk }}">Laki-laki</option>
+                                        <option value="0">Perempuan</option>
+                                    @elseif ($user->jk == 0)
+                                        <option selected value="{{ $user->jk }}">Perempuan</option>
+                                        <option value="1">Laki-laki</option>
+                                    @endif
+                                </select>
+                            </div>
+                            <div class="col mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" name="email" class="form-control" value="{{ $user->email }}" />
                             </div>
@@ -117,7 +133,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Ubah Profil</h5>
+                    <h5 class="modal-title">Ubah Password</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -127,15 +143,15 @@
                         @csrf
                         <div class="col mb-3">
                             <label for="password_lama" class="form-label">Password Lama</label>
-                            <input type="text" name="password_lama" class="form-control" />
+                            <input type="password" name="password_lama" class="form-control" />
                         </div>
                         <div class="col mb-3">
                             <label for="password" class="form-label">Password Baru</label>
-                            <input type="text" name="password" class="form-control" />
+                            <input type="password" name="password" class="form-control" />
                         </div>
                         <div class="col mb-3">
                             <label for="password_confirmation" class="form-label">Konfirmasi Password Baru</label>
-                            <input type="text" name="password_confirmation" class="form-control" />
+                            <input type="password" name="password_confirmation" class="form-control" />
                         </div>
                         <button type="submit" class="btn btn-info ms-3 text-light" style="width: 150px">Simpan</button>
                     </form>

@@ -47,6 +47,8 @@ class ResepController extends Controller
             $validated['image'] = $request->file('image')->store('reseps');
         }
 
+
+
         Resep::create($validated);
         return redirect('/kirimresep')->with('alert', 'Resep Anda berhasil dikirim!');
 

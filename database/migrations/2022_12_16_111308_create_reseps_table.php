@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('reseps', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('status')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    public function index(){
-        return view('user.signUp-page', [
-        ]);
-    }
-
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -27,7 +22,7 @@ class RegisterController extends Controller
         $validated['password'] = Hash::make($validated['password']);
 
         User::create($validated);
-        return redirect('/login')->with('alert', 'Registrasi berhasil. Silahkan login!');
+        return redirect('/')->with('alert', 'Pendaftaran berhasil. Silahkan masuk!');
 
     }
 }
