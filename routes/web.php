@@ -30,7 +30,7 @@ use App\Http\Controllers\ResepController;
 */
 
 // Customer tanpa login
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/produk', [ObatController::class, 'index']);
 Route::get('produk/{obat:slug}', [ObatController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
@@ -44,9 +44,12 @@ Route::post('/regis', [RegisterController::class, 'store']);
 Route::post('/admin-logout', [AdminLoginController::class, 'logout']);
 
 // Customer Login-Logout
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+// Google Login
+Route::get('/auth/redirect', [LoginController::class, 'redirectToProvider']);
+Route::get('/auth/callback', [LoginController::class, 'handleProviderCallback']);
 
 // Middleware cek role
 Route::group(['middleware' => 'auth'], function() {
