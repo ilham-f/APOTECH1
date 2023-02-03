@@ -19,7 +19,8 @@ class AdminController extends Controller
         return view('admin.obat', [
             'obats' => Obat::all(),
             'categories' => Category::all(),
-            'title' => 'Tabel Obat'
+            'title' => 'Tabel Obat',
+            'keluhan' => Keluhan::all()
         ]);
     }
 

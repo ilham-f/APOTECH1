@@ -62,6 +62,13 @@ class ObatController extends Controller
         }
 
         Obat::create($validated);
+
+        $obatt = Obat::latest('id')->first();
+
+        foreach ($request->input('keluhans') as $keluhan) {
+            $obatt->keluhans()->attach($keluhan);
+        }
+
         return redirect('/tabelobat')->with('alert', 'Obat baru berhasil ditambahkan');
     }
 

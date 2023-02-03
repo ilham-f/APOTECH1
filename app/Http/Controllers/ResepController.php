@@ -16,7 +16,18 @@ class ResepController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.resep', [
+            "resep" => Resep::latest()->paginate(2),
+            'title' => 'resep'
+        ]);
+    }
+
+    public function indexbuat()
+    {
+        return view('admin.buatpesananresep', [
+            'resep' => Resep::doesnthave('pesanan_resep')->get(),
+            'title' => 'buat pesanan resep'
+        ]);
     }
 
     /**
@@ -47,8 +58,6 @@ class ResepController extends Controller
             $validated['image'] = $request->file('image')->store('reseps');
         }
 
-
-
         Resep::create($validated);
         return redirect('/kirimresep')->with('alert', 'Resep Anda berhasil dikirim!');
 
@@ -62,7 +71,10 @@ class ResepController extends Controller
      */
     public function show(Resep $resep)
     {
-        //
+        return view('admin.detilresep', [
+            'resep' => $resep,
+            'title' => 'detil resep'
+        ]);
     }
 
     /**
