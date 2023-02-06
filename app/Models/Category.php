@@ -11,8 +11,8 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
-    public function obats()
+    public function programs()
     {
-        return $this->hasMany(Obat::class);
+        return $this->hasMany(Programs::class);
     }
 }

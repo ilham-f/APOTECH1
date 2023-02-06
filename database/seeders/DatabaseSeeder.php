@@ -17,11 +17,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            UserSeeder::class,
             CategorySeeder::class,
-            ObatSeeder::class,
-            KeluhanSeeder::class,
-            UserSeeder::class
+            ProgramSeeder::class,
         ]);
 
         $keluhans = Keluhan::all();

@@ -11,12 +11,12 @@ class Transaksi extends Model
 
     protected $guarded = ['id'];
 
-    public function obats()
+    public function programs()
     {
-        return $this->belongsToMany(Obat::class, 'detil_transaksis')->withPivot('qty', 'pricesum');
+        return $this->belongsTo(Program::class, 'detil_transaksis')->withPivot('qty', 'pricesum');
     }
 
-    public function user()
+    public function users()
     {
         return $this->belongsTo(User::class);
     }

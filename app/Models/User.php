@@ -21,7 +21,7 @@ class User extends Authenticatable
     protected $guarded = ['id'];
 
     protected $attributes = [
-        'role' => 'customer'
+        'role' => 'pengunjung'
     ];
 
     /**
@@ -48,8 +48,8 @@ class User extends Authenticatable
         return $this->hasMany(Transaksi::class);
     }
 
-    public function reseps()
+    public function programs()
     {
-        return $this->hasMany(Resep::class);
+        return $this->hasMany(Program::class);
     }
 }

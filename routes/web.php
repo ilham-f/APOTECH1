@@ -2,22 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Obat;
 use App\Models\Category;
-use App\Models\Keluhan;
-use App\Http\Controllers\ObatController;
-use App\Http\Controllers\KeluhanController;
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ResepController;
-use App\Http\Controllers\PesananResepController;
+use App\Http\Controllers\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,16 +33,13 @@ Route::get('categories/{category:slug}', [CategoryController::class, 'show']);
 // User Regis
 Route::post('/regis', [RegisterController::class, 'store']);
 
-// Admin Logout
-Route::post('/admin-logout', [AdminLoginController::class, 'logout']);
-
 // Customer Login-Logout
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 // Google Login
-Route::get('/auth/redirect', [LoginController::class, 'redirectToProvider']);
-Route::get('/auth/callback', [LoginController::class, 'handleProviderCallback']);
+Route::get('/auth/redirect', [GoogleController::class, 'redirectToGoogle']);
+Route::get('/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 // Middleware cek role
 Route::group(['middleware' => 'auth'], function() {

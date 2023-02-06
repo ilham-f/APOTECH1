@@ -5,19 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Resep extends Model
+class Program extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
 
-    public function user()
+    public function transaksis()
+    {
+        return $this->hasMany(Transaksi::class);
+    }
+
+    public function users()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function pesanan_resep()
+    public function categories()
     {
-        return $this->hasOne(PesananResep::class);
+        return $this->belongsTo(Category::class);
     }
 }

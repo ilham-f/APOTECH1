@@ -15,18 +15,15 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'nama' => 'Obat Bebas',
-            'slug' => 'obat-bebas'
+            'nama' => 'Pendidikan',
         ]);
 
         Category::create([
-            'nama' => 'Obat Bebas Terbatas',
-            'slug' => 'obat-bebas-terbatas'
+            'nama' => 'Kesehatan',
         ]);
 
         Category::create([
-            'nama' => 'Obat Keras',
-            'slug' => 'obat-keras'
+            'nama' => 'Bencana Alam',
         ]);
     }
 }

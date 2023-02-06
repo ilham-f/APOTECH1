@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Keluhan_Obat;
-use App\Http\Requests\StoreKeluhan_ObatRequest;
-use App\Http\Requests\UpdateKeluhan_ObatRequest;
+use App\Models\Program;
+use App\Http\Requests\StoreProgramRequest;
+use App\Http\Requests\UpdateProgramRequest;
 
-class KeluhanObatController extends Controller
+class ProgramController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class KeluhanObatController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreKeluhan_ObatRequest  $request
+     * @param  \App\Http\Requests\StoreProgramRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreKeluhan_ObatRequest $request)
+    public function store(StoreProgramRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class KeluhanObatController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Keluhan_Obat  $keluhan_Obat
+     * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function show(Keluhan_Obat $keluhan_Obat)
+    public function show(Program $program)
     {
         //
     }
@@ -53,10 +53,10 @@ class KeluhanObatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Keluhan_Obat  $keluhan_Obat
+     * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function edit(Keluhan_Obat $keluhan_Obat)
+    public function edit(Program $program)
     {
         //
     }
@@ -64,11 +64,11 @@ class KeluhanObatController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateKeluhan_ObatRequest  $request
-     * @param  \App\Models\Keluhan_Obat  $keluhan_Obat
+     * @param  \App\Http\Requests\UpdateProgramRequest  $request
+     * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateKeluhan_ObatRequest $request, Keluhan_Obat $keluhan_Obat)
+    public function update(UpdateProgramRequest $request, Program $program)
     {
         //
     }
@@ -76,10 +76,10 @@ class KeluhanObatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Keluhan_Obat  $keluhan_Obat
+     * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Keluhan_Obat $keluhan_Obat)
+    public function destroy(Program $program)
     {
         //
     }

@@ -18,9 +18,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle border-0" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Obat</a>
                         <ul class="dropdown-menu" style="padding: 0; border-radius: 5px;">
-                            @foreach ($categories as $category)
+                            {{-- @foreach ($categories as $category)
                                 <li><a class="dropdown-item border-0" href="/categories/{{ $category->slug }}">{{  $category->nama }}</a></li>
-                            @endforeach
+                            @endforeach --}}
                         </ul>
                     </li>
                 </ul>
@@ -29,7 +29,7 @@
 
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    @foreach ($obats->slice(0,4) as $obat)
+                    {{-- @foreach ($obats->slice(0,4) as $obat)
                     <div class="col mb-5">
                         <div class="card h-100 shadow">
                             <!-- Product image-->
@@ -67,11 +67,11 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
             </div>
         </section>
-        
+
         <script>
             let msg = '{{Session::get('alert')}}';
 
